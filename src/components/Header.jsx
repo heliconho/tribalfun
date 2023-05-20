@@ -5,6 +5,7 @@ import {
 	Bar,
 	BellIcon,
 	ClearIcon,
+	HeaderLeaf,
 	RightAngle,
 	SearchIcon,
 } from "../Icon";
@@ -110,16 +111,13 @@ const Header = () => {
 								<SocialIcons />
 							</div>
 						</div>
-						<div
-							onClick={() => {
-								setOpen(!open);
-							}}
-						>
-							<ProfileDropdown />
-						</div>
+						<ProfileDropdown setMenuTrigger={setOpen} />
 					</div>
 				</div>
 			</header>
+			<div className="header-leaf">
+				<HeaderLeaf />
+			</div>
 		</>
 	);
 };

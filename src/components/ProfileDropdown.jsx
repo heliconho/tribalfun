@@ -8,11 +8,14 @@ import {
 	WalletIcon,
 } from "../Icon";
 
-const ProfileDropdown = () => {
+const ProfileDropdown = ({ setMenuTrigger }) => {
 	const [open, setOpen] = useState(false);
 	return (
 		<>
-			<div className="dropdown __profile-dropdown">
+			<div
+				className="dropdown __profile-dropdown"
+				onClick={() => setMenuTrigger(false)}
+			>
 				<button
 					className="__dropdown-icon"
 					onClick={() => setOpen(!open)}
