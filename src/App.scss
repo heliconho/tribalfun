@@ -951,7 +951,7 @@ header {
 		line-height: 40px;
 		margin-bottom: 25px;
 	}
-	@include breakpoint(md) {
+	@include breakpoint(sm) {
 		.title {
 			margin-inline: auto;
 			margin-bottom: 48px;
@@ -993,20 +993,20 @@ header {
 .auth-content {
 	.cmn-btn {
 		height: 48px;
-		@include breakpoint(md) {
+		@include breakpoint(sm) {
 			height: 56px;
 		}
 	}
 	.subtext {
 		max-width: 352px;
 		margin: 0 auto 25px;
-		@include breakpoint(md) {
+		@include breakpoint(sm) {
 			margin: 0 auto 48px;
 		}
 	}
 	.link-sent {
 		margin-bottom: 48px;
-		@include breakpoint(max-md) {
+		@include breakpoint(max-sm) {
 			margin-bottom: 35px;
 		}
 	}
@@ -1020,7 +1020,7 @@ header {
 	margin-bottom: 28px;
 }
 
-@include breakpoint(max-md) {
+@include breakpoint(max-sm) {
 	.my-32,
 	.mt-32 {
 		margin-top: 27px;
@@ -1041,7 +1041,7 @@ header {
 	cursor: pointer;
 }
 .signup-content {
-	@include breakpoint(md) {
+	@include breakpoint(sm) {
 		.input-item {
 			&:not(:last-child) {
 				margin-bottom: 20px;

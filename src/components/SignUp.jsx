@@ -11,10 +11,10 @@ const SignUp = () => {
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
-				<div className="text-start text-md-center auth-content signup-content">
+				<div className="text-start text-sm-center auth-content signup-content">
 					<img src={logo} alt="" className="logo d-none d-sm-block" />
-					<h6 className="d-md-none subtitle">- Sign Up</h6>
-					<h3 className="d-md-none title">Create Account</h3>
+					<h6 className="d-sm-none subtitle">- Sign Up</h6>
+					<h3 className="d-sm-none title">Create Account</h3>
 					<Input
 						label="Email"
 						type="text"

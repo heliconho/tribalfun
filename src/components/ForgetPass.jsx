@@ -11,9 +11,9 @@ const ForgetPass = () => {
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
-				<div className="text-start text-md-center auth-content">
+				<div className="text-start text-sm-center auth-content">
 					<img src={logo} alt="" className="logo d-none d-sm-block" />
-					<h6 className="d-md-none subtitle">- Forget password</h6>
+					<h6 className="d-sm-none subtitle">- Forget password</h6>
 					<h3 className="title">Enter your email to reset passowrd</h3>
 					<Input
 						label="Email"
