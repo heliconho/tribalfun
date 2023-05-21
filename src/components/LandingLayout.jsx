@@ -1,13 +1,15 @@
 import React from "react";
-import Header from "./Header";
+import useScreen from "../hooks/useScreen";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const LandingLayout = ({ children }) => {
+	const screen = useScreen();
 	return (
 		<>
 			<Header />
 			{children}
-			<Footer />
+			{screen < 768 && <Footer />}
 		</>
 	);
 };

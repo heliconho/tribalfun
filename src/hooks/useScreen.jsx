@@ -11,7 +11,6 @@ const useScreen = () => {
 		updatePosition();
 		return () => window.removeEventListener("resize", updatePosition);
 	}, []);
-	console.log(screen);
 	return screen;
 };
 
