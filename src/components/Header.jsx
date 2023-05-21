@@ -72,11 +72,12 @@ const Header = () => {
 								{data?.map((item, i) =>
 									item?.data?.length > 0 ? (
 										<li
-											class={
+											className={
 												submenuOpen == i
 													? "submenu-parent my-auto"
 													: ""
 											}
+											key={i}
 										>
 											<Link to="#" onClick={() => setSubmenuOpen(i)}>
 												{item?.name}{" "}
@@ -87,7 +88,7 @@ const Header = () => {
 											<Submenu data={item?.data} />
 										</li>
 									) : (
-										<li>
+										<li key={i}>
 											<Link to={item?.url}>{item?.name}</Link>
 										</li>
 									)
@@ -125,7 +126,7 @@ const Submenu = ({ data }) => {
 	return (
 		<ul className="submenu">
 			{data?.map((item, i) => (
-				<li>
+				<li key={i}>
 					<Link to={item?.url}>{item?.name}</Link>
 				</li>
 			))}

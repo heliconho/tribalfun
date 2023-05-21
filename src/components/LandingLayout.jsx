@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "./Footer";
 import Header from "./Header";
 
 const LandingLayout = ({ children }) => {
@@ -7,8 +6,6 @@ const LandingLayout = ({ children }) => {
 		<>
 			<Header />
 			{children}
-			<div className="d-md-none"></div>
-			<Footer />
 		</>
 	);
 };

@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
-import Landing from "./pages/Landing";
+import Landing from "./pages/landing/Landing";
 function App() {
 	return (
 		<BrowserRouter>

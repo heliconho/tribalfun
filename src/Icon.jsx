@@ -127,7 +127,6 @@ export const WalletIcon = () => (
 		/>
 	</svg>
 );
-
 export const MerchantIcon = () => (
 	<svg
 		width="40"
@@ -154,7 +153,6 @@ export const MerchantIcon = () => (
 		/>
 	</svg>
 );
-
 export const SettingIcon = () => (
 	<svg
 		width="40"
@@ -186,7 +184,6 @@ export const SettingIcon = () => (
 		/>
 	</svg>
 );
-
 export const Bar = () => (
 	<svg
 		width="48"
@@ -212,7 +209,6 @@ export const Bar = () => (
 		/>
 	</svg>
 );
-
 export const ClearIcon = () => (
 	<svg
 		width="48"
@@ -238,7 +234,6 @@ export const ClearIcon = () => (
 		/>
 	</svg>
 );
-
 export const RightAngle = () => (
 	<svg
 		width="17"
@@ -255,7 +250,6 @@ export const RightAngle = () => (
 		/>
 	</svg>
 );
-
 export const Facebook = () => <img src={facebook} alt="" />;
 export const Instagram = () => <img src={instagram} alt="" />;
 export const Twitter = () => <img src={twitter} alt="" />;
@@ -270,14 +264,14 @@ export const SearchIcon = () => (
 	>
 		<path
 			d="M10.8889 19.7778C15.7981 19.7778 19.7778 15.7981 19.7778 10.8889C19.7778 5.9797 15.7981 2 10.8889 2C5.9797 2 2 5.9797 2 10.8889C2 15.7981 5.9797 19.7778 10.8889 19.7778Z"
-			stroke="black"
+			stroke="currentColor"
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
 		/>
 		<path
 			d="M21.9998 22.0001L17.1665 17.1667"
-			stroke="black"
+			stroke="currentColor"
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
