@@ -28,7 +28,7 @@ const SignIn = () => {
 					<button className="cmn-btn w-100" type="submit">
 						Login
 					</button>
-					<div className="my-32">
+					<div className="my-32 text-center">
 						{screen < 576 ? (
 							<Link
 								className="text-body cursor-pointer"
@@ -46,7 +46,7 @@ const SignIn = () => {
 							</span>
 						)}
 					</div>
-					<div>
+					<div className="text-center">
 						No account?{" "}
 						{screen < 576 ? (
 							<Link className="text-base" to="/sign-up">

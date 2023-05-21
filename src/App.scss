@@ -872,7 +872,7 @@ header {
 	@include breakpoint(max-lg) {
 		flex-wrap: wrap;
 		gap: 50px;
-		padding-block: 65px;
+		padding-block: 65px 140px;
 		.images-area,
 		.content-area {
 			width: 100%;
@@ -1070,5 +1070,13 @@ header {
 	.info {
 		width: 0;
 		flex-grow: 1;
+	}
+}
+.auth-section {
+	padding: 53px 0 150px;
+	.container {
+		@include breakpoint(max-sm) {
+			padding-inline: 32px;
+		}
 	}
 }

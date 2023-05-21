@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import useScreen from "../hooks/useScreen";
 import Input from "./Input";
@@ -8,6 +8,7 @@ const ForgetPass = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 	};
+	const navigate = useNavigate();
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
@@ -23,14 +24,14 @@ const ForgetPass = () => {
 					<button className="cmn-btn w-100" type="submit">
 						Reset Password
 					</button>
-					<div className="mt-32">
+					<div className="mt-32 text-center">
 						{screen < 576 ? (
-							<Link
+							<span
 								className="text-body cursor-pointer"
-								to="/forget-pass"
+								onClick={() => navigate(-1)}
 							>
 								Cancel
-							</Link>
+							</span>
 						) : (
 							<span
 								className="text-body cursor-pointer"

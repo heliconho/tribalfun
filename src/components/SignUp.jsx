@@ -49,7 +49,7 @@ const SignUp = () => {
 							Sign Up
 						</button>
 					)}
-					<div className="my-32">
+					<div className="my-32 text-center">
 						{screen < 576 ? (
 							<Link
 								className="text-body cursor-pointer"
@@ -67,7 +67,7 @@ const SignUp = () => {
 							</span>
 						)}
 					</div>
-					<div>
+					<div className="text-center">
 						Already have an account?{" "}
 						{screen < 576 ? (
 							<Link className="text-base" to="/login">
