@@ -24,7 +24,7 @@ const ForgetPass = () => {
 						Reset Password
 					</button>
 					<div className="mt-32">
-						{screen < 768 ? (
+						{screen < 576 ? (
 							<Link
 								className="text-body cursor-pointer"
 								to="/forget-pass"

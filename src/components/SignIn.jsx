@@ -29,7 +29,7 @@ const SignIn = () => {
 						Login
 					</button>
 					<div className="my-32">
-						{screen < 768 ? (
+						{screen < 576 ? (
 							<Link
 								className="text-body cursor-pointer"
 								to="/forget-pass"
@@ -48,7 +48,7 @@ const SignIn = () => {
 					</div>
 					<div>
 						No account?{" "}
-						{screen < 768 ? (
+						{screen < 576 ? (
 							<Link className="text-base" to="/sign-up">
 								Create one
 							</Link>
