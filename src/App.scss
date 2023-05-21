@@ -921,7 +921,7 @@ header {
 	background: rgba(144, 144, 144, 0.5);
 }
 .modal-md {
-	max-width: 682px;
+	max-width: 596px;
 }
 .modal-content {
 	border: none;
@@ -932,4 +932,143 @@ header {
 	border-radius: 24px;
 	padding: 48px;
 	border: none;
+	.logo {
+		display: block;
+		max-width: 116px;
+		margin: 0 auto 32px;
+	}
+}
+
+.auth-content {
+	.subtitle {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 24px;
+		color: var(--base);
+	}
+	.title {
+		font-size: 32px;
+		line-height: 40px;
+		margin-bottom: 25px;
+	}
+	@include breakpoint(md) {
+		.title {
+			margin-inline: auto;
+			margin-bottom: 48px;
+			max-width: 294px;
+		}
+	}
+}
+.input-item {
+	&:not(:last-child) {
+		margin-bottom: 32px;
+	}
+	.form-control {
+		height: 56px;
+		border-radius: 24px;
+		box-shadow: none !important;
+		outline: none !important;
+		padding-inline: 16px;
+		&:focus {
+			border-color: var(--base);
+		}
+		&::placeholder {
+			color: #a2a1a7;
+		}
+	}
+	label {
+		letter-spacing: 0.005em;
+		display: block;
+		color: #2e2f3a;
+		text-align: start;
+		margin-bottom: 5px;
+	}
+	.view-pass-btn {
+		position: absolute;
+		top: 50%;
+		right: 20px;
+		transform: translateY(-50%);
+	}
+}
+.auth-content {
+	.cmn-btn {
+		height: 48px;
+		@include breakpoint(md) {
+			height: 56px;
+		}
+	}
+	.subtext {
+		max-width: 352px;
+		margin: 0 auto 25px;
+		@include breakpoint(md) {
+			margin: 0 auto 48px;
+		}
+	}
+	.link-sent {
+		margin-bottom: 48px;
+		@include breakpoint(max-md) {
+			margin-bottom: 35px;
+		}
+	}
+}
+.my-32,
+.mt-32 {
+	margin-top: 32px;
+}
+.mb-32,
+.my-32 {
+	margin-bottom: 28px;
+}
+
+@include breakpoint(max-md) {
+	.my-32,
+	.mt-32 {
+		margin-top: 27px;
+	}
+	.mb-32,
+	.my-32 {
+		margin-bottom: 27px;
+	}
+}
+.text-base {
+	color: var(--base);
+	cursor: pointer;
+}
+.text-body {
+	color: var(--text) !important;
+}
+.cursor-pointer {
+	cursor: pointer;
+}
+.signup-content {
+	@include breakpoint(md) {
+		.input-item {
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+		.my-32 {
+			margin-block: 20px;
+		}
+		.mt-32 {
+			margin-top: 20px;
+		}
+		.mb-32 {
+			margin-bottom: 20px;
+		}
+	}
+}
+.link-sent {
+	display: flex;
+	gap: 12px;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 26px;
+	letter-spacing: 0.005em;
+	color: var(--text);
+	text-align: start;
+	.info {
+		width: 0;
+		flex-grow: 1;
+	}
 }

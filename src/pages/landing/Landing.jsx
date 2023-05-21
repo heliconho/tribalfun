@@ -6,7 +6,7 @@ const Landing = () => {
 	return (
 		<>
 			<LandingLayout>
-				<LandingBanner></LandingBanner>
+				<LandingBanner />
 			</LandingLayout>
 		</>
 	);

@@ -10,9 +10,13 @@ import {
 	SearchIcon,
 } from "../Icon";
 import logo from "../assets/img/logo.png";
+import ConfirmEmail from "./ConfirmEmail";
 import DropdownGroup from "./DropdownGroup";
+import ForgetPass from "./ForgetPass";
 import ModalLayout from "./ModalLayout";
 import ProfileDropdown from "./ProfileDropdown";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 import SocialIcons from "./SocialIcons";
 const Header = () => {
 	const [open, setOpen] = useState(false);
@@ -120,8 +124,19 @@ const Header = () => {
 			<div className="header-leaf">
 				<HeaderLeaf />
 			</div>
-			<ModalLayout id="login"></ModalLayout>
-			<ModalLayout id="sign-up"></ModalLayout>
+			{/* Modals */}
+			<ModalLayout id="login">
+				<SignIn />
+			</ModalLayout>
+			<ModalLayout id="sign-up">
+				<SignUp />
+			</ModalLayout>
+			<ModalLayout id="forget-pass">
+				<ForgetPass />
+			</ModalLayout>
+			<ModalLayout id="confirm-email">
+				<ConfirmEmail />
+			</ModalLayout>
 		</>
 	);
 };
