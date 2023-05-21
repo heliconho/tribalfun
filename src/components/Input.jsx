@@ -18,7 +18,7 @@ const Input = ({ label, type, className, ...rest }) => {
 							className="view-pass-btn"
 							onClick={() => setViewPass(!viewPass)}
 						>
-							{viewPass ? <EyeSlash /> : <Eye />}
+							{!viewPass ? <EyeSlash /> : <Eye />}
 						</span>
 					</div>
 				</div>
