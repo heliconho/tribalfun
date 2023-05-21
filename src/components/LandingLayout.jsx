@@ -17,8 +17,7 @@ const LandingLayout = ({ children }) => {
 		<>
 			<Header />
 			{children}
-			{/* {screen < 768 && <Footer />} */}
-			<Footer />
+			{screen < 768 && <Footer />}
 		</>
 	);
 };
