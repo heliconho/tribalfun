@@ -62,14 +62,16 @@ const ProfileDropdown = ({ setMenuTrigger }) => {
 						<button
 							className="cmn-btn"
 							type="button"
-							// data-bs-toggle="modal"
+							data-bs-toggle="modal"
+							data-bs-target="#login"
 						>
 							Log In
 						</button>
 						<button
 							className="cmn-outline-btn"
 							type="button"
-							// data-bs-toggle="modal"
+							data-bs-toggle="modal"
+							data-bs-target="#sign-up"
 						>
 							Sign Up
 						</button>

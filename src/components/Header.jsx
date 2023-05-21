@@ -11,6 +11,7 @@ import {
 } from "../Icon";
 import logo from "../assets/img/logo.png";
 import DropdownGroup from "./DropdownGroup";
+import ModalLayout from "./ModalLayout";
 import ProfileDropdown from "./ProfileDropdown";
 import SocialIcons from "./SocialIcons";
 const Header = () => {
@@ -119,6 +120,8 @@ const Header = () => {
 			<div className="header-leaf">
 				<HeaderLeaf />
 			</div>
+			<ModalLayout id="login"></ModalLayout>
+			<ModalLayout id="sign-up"></ModalLayout>
 		</>
 	);
 };

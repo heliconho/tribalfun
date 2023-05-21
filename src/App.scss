@@ -903,3 +903,33 @@ header {
 		}
 	}
 }
+.modal-close {
+	border: none;
+	background: transparent;
+	outline: none;
+	box-shadow: none;
+	svg {
+		box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.1);
+		width: 32px;
+		height: unset;
+	}
+	position: absolute;
+	right: -9px;
+	top: -9px;
+}
+.modal {
+	background: rgba(144, 144, 144, 0.5);
+}
+.modal-md {
+	max-width: 682px;
+}
+.modal-content {
+	border: none;
+}
+.modal-body {
+	background: #fcfcfd;
+	box-shadow: 0px 64px 64px -48px rgba(15, 15, 15, 0.08);
+	border-radius: 24px;
+	padding: 48px;
+	border: none;
+}
