@@ -862,7 +862,10 @@ header {
 		@media (max-width: 375px) {
 			.item {
 				img {
-					width: 246px;
+					width: 236px;
+				}
+				.title {
+					padding: 0 15px;
 				}
 			}
 		}
