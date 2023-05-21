@@ -35,14 +35,20 @@ const SignUp = () => {
 						type="password"
 						placeholder="Enter your password"
 					/>
-					<button
-						className="cmn-btn w-100"
-						type="submit"
-						data-bs-toggle="modal"
-						data-bs-target="#confirm-email"
-					>
-						Sign Up
-					</button>
+					{screen < 576 ? (
+						<Link className="cmn-btn w-100" to="/confirm-email">
+							Sign Up
+						</Link>
+					) : (
+						<button
+							className="cmn-btn w-100"
+							type="submit"
+							data-bs-toggle="modal"
+							data-bs-target="#confirm-email"
+						>
+							Sign Up
+						</button>
+					)}
 					<div className="my-32">
 						{screen < 576 ? (
 							<Link

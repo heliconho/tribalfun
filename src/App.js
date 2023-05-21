@@ -8,6 +8,10 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Landing />} />
+				<Route path="/login" element={<Landing />} />
+				<Route path="/sign-up" element={<Landing />} />
+				<Route path="/forget-pass" element={<Landing />} />
+				<Route path="/confirm-email" element={<Landing />} />
 			</Routes>
 		</BrowserRouter>
 	);

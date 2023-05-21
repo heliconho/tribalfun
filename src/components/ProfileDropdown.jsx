@@ -7,9 +7,11 @@ import {
 	SettingIcon,
 	WalletIcon,
 } from "../Icon";
+import useScreen from "../hooks/useScreen";
 
 const ProfileDropdown = ({ setMenuTrigger }) => {
 	const [open, setOpen] = useState(false);
+	const screen = useScreen();
 	return (
 		<>
 			<div
@@ -59,22 +61,35 @@ const ProfileDropdown = ({ setMenuTrigger }) => {
 						</li>
 					</ul>
 					<div className="btn-wrapper">
-						<button
-							className="cmn-btn"
-							type="button"
-							data-bs-toggle="modal"
-							data-bs-target="#login"
-						>
-							Log In
-						</button>
-						<button
-							className="cmn-outline-btn"
-							type="button"
-							data-bs-toggle="modal"
-							data-bs-target="#sign-up"
-						>
-							Sign Up
-						</button>
+						{screen >= 576 ? (
+							<>
+								<button
+									className="cmn-btn"
+									type="button"
+									data-bs-toggle="modal"
+									data-bs-target="#login"
+								>
+									Log In
+								</button>
+								<button
+									className="cmn-outline-btn"
+									type="button"
+									data-bs-toggle="modal"
+									data-bs-target="#sign-up"
+								>
+									Sign Up
+								</button>
+							</>
+						) : (
+							<>
+								<Link to="/login" className="cmn-btn">
+									Log In
+								</Link>
+								<Link to="/sign-up" className="cmn-outline-btn">
+									Sign Up
+								</Link>
+							</>
+						)}
 					</div>
 				</div>
 			</div>
