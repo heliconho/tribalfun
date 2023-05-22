@@ -1,6 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import "react-datepicker/dist/react-datepicker.css";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "./App.scss";
 import ConfirmEmailPage from "./pages/auth/ConfirmEmailPage";
 import ForgetPassPage from "./pages/auth/ForgetPassPage";
@@ -9,16 +11,27 @@ import SignUpPage from "./pages/auth/SignUpPage";
 import Home from "./pages/home/Home";
 import Landing from "./pages/landing/Landing";
 function App() {
+	const Wrapper = ({ children }) => {
+		const location = useLocation();
+		useEffect(() => {
+			setTimeout(() => {
+				document.documentElement.scrollTo(0, 0);
+			}, 500);
+		}, [location.pathname, location.search]);
+		return children;
+	};
 	return (
 		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Landing />} />
-				<Route path="/login" element={<SignInPage />} />
-				<Route path="/sign-up" element={<SignUpPage />} />
-				<Route path="/forget-pass" element={<ForgetPassPage />} />
-				<Route path="/confirm-email" element={<ConfirmEmailPage />} />
-				<Route path="/home" element={<Home />} />
-			</Routes>
+			<Wrapper>
+				<Routes>
+					<Route path="/" element={<Landing />} />
+					<Route path="/login" element={<SignInPage />} />
+					<Route path="/sign-up" element={<SignUpPage />} />
+					<Route path="/forget-pass" element={<ForgetPassPage />} />
+					<Route path="/confirm-email" element={<ConfirmEmailPage />} />
+					<Route path="/home" element={<Home />} />
+				</Routes>
+			</Wrapper>
 		</BrowserRouter>
 	);
 }

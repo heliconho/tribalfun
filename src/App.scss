@@ -1289,6 +1289,7 @@ footer {
 }
 .banner-section {
 	position: relative;
+	z-index: 4;
 	.leftShape {
 		position: absolute;
 		left: 0;
@@ -1337,6 +1338,8 @@ footer {
 	}
 }
 .banner-booking-form {
+	position: relative;
+	z-index: 9;
 	background: linear-gradient(
 		265.67deg,
 		rgba(252, 252, 253, 0.8) -3.26%,
@@ -1384,6 +1387,7 @@ footer {
 }
 .booking-form-row {
 	display: flex;
+	align-items: flex-end;
 	.item:not(:first-child):where(:not(:last-child)) {
 		padding-left: 16px;
 		border-left: 1px solid #e9ebed;
@@ -1437,4 +1441,41 @@ footer {
 		right: 9px;
 		top: 9px;
 	}
+}
+.react-datepicker {
+	.react-datepicker__header {
+		background: var(--section);
+	}
+	border-color: var(--base);
+	* {
+		border-color: var(--border);
+	}
+}
+
+.react-datepicker-popper[data-placement^="bottom"]
+	.react-datepicker__triangle::before,
+.react-datepicker-popper[data-placement^="bottom"]
+	.react-datepicker__triangle::after {
+	border-bottom-color: var(--base);
+}
+.react-datepicker-popper[data-placement^="top"]
+	.react-datepicker__triangle::before,
+.react-datepicker-popper[data-placement^="top"]
+	.react-datepicker__triangle::after {
+	border-top-color: var(--base);
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--selected,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--in-selecting-range,
+.react-datepicker__year-text--in-range {
+	border-color: var(--base);
 }

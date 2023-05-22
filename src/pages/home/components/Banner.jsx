@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
 import { Link } from "react-router-dom";
 import {
 	CalendarAdd,
@@ -50,6 +51,9 @@ const Banner = () => {
 const BannerBookingForm = () => {
 	const [tab, setTab] = useState("1");
 
+	const [date, setDate] = useState();
+	const [checkout, setCheckout] = useState();
+
 	return (
 		<>
 			<div className="banner-booking-form">
@@ -89,20 +93,32 @@ const BannerBookingForm = () => {
 							<label className="item-title">
 								<CalendarAdd /> Check in
 							</label>
-							<input
-								type="text"
+							<DatePicker
 								className="form-control"
-								placeholder="Add dates"
+								selected={date}
+								value={date}
+								minDate={new Date()}
+								dropdownMode="select"
+								onChange={(e) => {
+									setDate(e);
+								}}
+								placeholderText="Add dates"
 							/>
 						</div>
 						<div className="item">
 							<label className="item-title">
 								<CalendarRemove /> Check out
 							</label>
-							<input
-								type="text"
+							<DatePicker
 								className="form-control"
-								placeholder="Add dates"
+								selected={checkout}
+								value={checkout}
+								minDate={new Date()}
+								dropdownMode="select"
+								onChange={(e) => {
+									setCheckout(e);
+								}}
+								placeholderText="Add dates"
 							/>
 						</div>
 						<div className="item">
