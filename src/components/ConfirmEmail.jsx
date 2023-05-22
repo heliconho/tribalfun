@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { CheckIcon } from "../Icon";
 import logo from "../assets/img/logo.png";
+import useScreen from "../hooks/useScreen";
 const ConfirmEmail = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 	};
+	const screen = useScreen();
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
@@ -27,13 +30,19 @@ const ConfirmEmail = () => {
 							A Link has been sent to your email joseph••••@gm•••.com
 						</span>
 					</div>
-					<button
-						className="cmn-btn w-100"
-						type="submit"
-						data-bs-dismiss="modal"
-					>
-						Continue
-					</button>
+					{screen < 576 ? (
+						<Link className="cmn-btn w-100" to="/">
+							Continue
+						</Link>
+					) : (
+						<button
+							className="cmn-btn w-100"
+							type="submit"
+							data-bs-dismiss="modal"
+						>
+							Continue
+						</button>
+					)}
 				</div>
 			</form>
 		</>
