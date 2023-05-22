@@ -1310,7 +1310,8 @@ footer {
 		}
 		@include breakpoint(max-sm) {
 			width: 265px;
-			top: 282px;
+			top: unset;
+			bottom: 0;
 		}
 	}
 	.rightShape {
@@ -1336,6 +1337,7 @@ footer {
 			top: 82px;
 		}
 	}
+	padding-bottom: 36px;
 }
 .banner-booking-form {
 	position: relative;
@@ -1478,4 +1480,60 @@ footer {
 .react-datepicker__year-text--in-selecting-range,
 .react-datepicker__year-text--in-range {
 	border-color: var(--base);
+}
+.py-120 {
+	padding-block: 120px;
+	@include breakpoint(max-md) {
+		padding-block: 60px;
+	}
+}
+.section-title {
+	max-width: 634px;
+	margin: 0 auto 40px;
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 0.005em;
+	color: var(--title);
+	.title {
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+	@include breakpoint(max-sm) {
+		max-width: 311px;
+		margin: 0 auto 27px;
+	}
+}
+.visual-slide-item {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	justify-content: center;
+	img {
+		width: 120px;
+		aspect-ratio: 1;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+	.cont {
+		max-width: 136px;
+		h6 {
+			margin-bottom: 16px;
+			font-weight: 500;
+		}
+		.badge {
+			font-size: 14px;
+			font-weight: 500;
+			color: var(--title);
+			padding: 11px 12px;
+			background: var(--section);
+			border-radius: 100px;
+		}
+	}
+	padding: 16px 36px;
+	@include breakpoint(max-xl) {
+		@include breakpoint(lg) {
+			padding: 16px;
+		}
+	}
 }

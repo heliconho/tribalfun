@@ -3,6 +3,8 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import { useEffect } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import "./App.scss";
 import ConfirmEmailPage from "./pages/auth/ConfirmEmailPage";
 import ForgetPassPage from "./pages/auth/ForgetPassPage";
