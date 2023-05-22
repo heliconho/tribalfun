@@ -125,6 +125,7 @@ h6 {
 @include breakpoint(max-sm) {
 	h1 {
 		font-size: 32px;
+		line-height: 48px;
 	}
 	h2 {
 		font-size: 32px;
@@ -199,12 +200,6 @@ a {
 
 header {
 	padding: 24px 0;
-	background: linear-gradient(
-		180deg,
-		rgba(252, 252, 253, 0.8) 0%,
-		#fcfcfd 100%
-	);
-	backdrop-filter: blur(16px);
 	// position: fixed;
 	top: 0;
 	.menu-toggle {
@@ -221,6 +216,17 @@ header {
 	width: 100%;
 	position: sticky;
 	z-index: 9;
+	border-bottom: 1px solid transparent;
+	transition: all ease 0.3s;
+	&.sticky {
+		background: linear-gradient(
+			180deg,
+			rgba(252, 252, 253, 0.9) 0%,
+			#fcfcfd 100%
+		);
+		// backdrop-filter: blur(16px);
+		border-color: var(--border);
+	}
 	@include breakpoint(max-lg) {
 		padding: 33px 0;
 		background: var(--body);
@@ -660,7 +666,7 @@ header {
 		right: calc(50% + 220px);
 		width: 120px;
 	}
-	z-index: 10;
+	// z-index: 10;
 	@include breakpoint(max-lg) {
 		display: none;
 	}
@@ -1201,4 +1207,213 @@ footer {
 		top: 8px;
 	}
 	position: relative;
+}
+.banner-wrapper {
+	display: flex;
+	padding-top: 38px;
+	@include breakpoint(max-sm) {
+		padding-top: 0;
+	}
+	.content {
+		width: 100%;
+		max-width: 631px;
+		text-align: right;
+		padding-top: 30px;
+		h6 {
+			color: var(--base);
+			margin-bottom: 16px;
+		}
+		.title {
+			margin-bottom: 26px;
+			@include breakpoint(xl) {
+				line-height: 88px;
+			}
+		}
+	}
+	.img {
+		width: 0;
+		flex-grow: 1;
+		img {
+			max-width: 692px;
+			@include breakpoint(max-xxl) {
+				max-width: 672px;
+			}
+			@include breakpoint(max-lg) {
+				@include breakpoint(md) {
+					width: 500px;
+				}
+			}
+		}
+	}
+	@include breakpoint(max-xl) {
+		@include breakpoint(lg) {
+			.content {
+				max-width: 480px;
+				.title {
+					font-size: 50px;
+					line-height: 60px;
+				}
+			}
+			.img {
+				img {
+					max-width: 540px;
+				}
+			}
+		}
+	}
+	@include breakpoint(max-lg) {
+		flex-wrap: wrap;
+		row-gap: 100px;
+		.content {
+			width: 100%;
+			text-align: left;
+			order: -1;
+		}
+		.img {
+			width: 100%;
+			text-align: right;
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+	@include breakpoint(max-sm) {
+		row-gap: 100px;
+		.img {
+			padding-left: 46px;
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+}
+.banner-section {
+	position: relative;
+	.leftShape {
+		position: absolute;
+		left: 0;
+		top: -50px;
+		max-width: 100%;
+		@include breakpoint(max-xxl) {
+			@include breakpoint(lg) {
+				width: 43vw;
+			}
+		}
+		@include breakpoint(max-lg) {
+			width: 500px;
+			top: 440px;
+		}
+		@include breakpoint(max-md) {
+			width: 285px;
+			top: 400px;
+		}
+		@include breakpoint(max-sm) {
+			width: 265px;
+			top: 282px;
+		}
+	}
+	.rightShape {
+		position: absolute;
+		right: 0;
+		top: 343px;
+		max-width: 100%;
+		@include breakpoint(max-xxl) {
+			@include breakpoint(lg) {
+				width: 33vw;
+			}
+		}
+		@include breakpoint(max-lg) {
+			width: 340px;
+			top: 280px;
+		}
+		@include breakpoint(max-md) {
+			width: 285px;
+			top: 200px;
+		}
+		@include breakpoint(max-sm) {
+			width: 265px;
+			top: 82px;
+		}
+	}
+}
+.banner-booking-form {
+	background: linear-gradient(
+		265.67deg,
+		rgba(252, 252, 253, 0.8) -3.26%,
+		#fcfcfd 50.21%
+	);
+	box-shadow: 0px 64px 40px rgba(45, 41, 41, 0.08);
+	border-radius: 24px;
+	padding: 16px;
+	.tab-menu {
+		margin-bottom: 32px;
+	}
+	max-width: 986px;
+}
+
+.tab-menu {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 32px;
+	row-gap: 12px;
+	li {
+		color: #a2a1a7;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		cursor: pointer;
+		letter-spacing: 0.005em;
+		&::after {
+			content: "";
+			bottom: -15px;
+			height: 1px;
+			width: 0;
+			position: absolute;
+			left: 0;
+			transition: all ease 0.2s;
+		}
+		position: relative;
+		&.active {
+			color: var(--title);
+			&::after {
+				background: var(--title);
+				width: 100%;
+			}
+		}
+	}
+}
+.booking-form-row {
+	display: flex;
+	.item:not(:first-child):where(:not(:last-child)) {
+		padding-left: 16px;
+		border-left: 1px solid #e9ebed;
+	}
+	.form-control {
+		border: none;
+		box-shadow: none;
+		outline: none;
+		padding-left: 26px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.item-title {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: 0.005em;
+		color: #09080d;
+		display: block;
+	}
+	.item {
+		.cmn-btn {
+			display: flex;
+			align-items: center;
+		}
+	}
+	@include breakpoint(max-lg) {
+		.item-title {
+			font-size: 14px;
+		}
+	}
 }

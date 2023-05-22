@@ -22,9 +22,19 @@ const Header = () => {
 	const [open, setOpen] = useState(false);
 	const [submenuOpen, setSubmenuOpen] = useState("undefined");
 
+	const handleScroll = () => {
+		const position = window.pageYOffset;
+		if (position < 140) {
+			setSticky(false);
+		} else {
+			setSticky(true);
+		}
+	};
+	const [sticky, setSticky] = useState(false);
+	window.addEventListener("scroll", handleScroll);
 	return (
 		<>
-			<header>
+			<header className={sticky ? "sticky" : ""}>
 				<div className="container">
 					<div className="header-wrapper">
 						{submenuOpen != "undefined" && (

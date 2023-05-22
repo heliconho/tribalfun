@@ -6,6 +6,7 @@ import ConfirmEmailPage from "./pages/auth/ConfirmEmailPage";
 import ForgetPassPage from "./pages/auth/ForgetPassPage";
 import SignInPage from "./pages/auth/SignInPage";
 import SignUpPage from "./pages/auth/SignUpPage";
+import Home from "./pages/home/Home";
 import Landing from "./pages/landing/Landing";
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path="/sign-up" element={<SignUpPage />} />
 				<Route path="/forget-pass" element={<ForgetPassPage />} />
 				<Route path="/confirm-email" element={<ConfirmEmailPage />} />
+				<Route path="/home" element={<Home />} />
 			</Routes>
 		</BrowserRouter>
 	);
