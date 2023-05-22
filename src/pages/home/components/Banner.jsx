@@ -113,7 +113,7 @@ const BannerBookingForm = () => {
 								className="form-control"
 								selected={checkout}
 								value={checkout}
-								minDate={new Date()}
+								minDate={date}
 								dropdownMode="select"
 								onChange={(e) => {
 									setCheckout(e);
