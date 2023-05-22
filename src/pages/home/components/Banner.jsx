@@ -1,11 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import desktopImg from "../../../assets/img/banner/banner-desk.png";
-import mobileImg from "../../../assets/img/banner/banner-mobile.png";
-import leftShape from "../../../assets/img/banner/left-shape.png";
-import rightShape from "../../../assets/img/banner/right-shape.png";
-
-import useScreen from "../../../hooks/useScreen";
 import {
 	CalendarAdd,
 	CalendarRemove,
@@ -13,6 +7,12 @@ import {
 	SearchIcon,
 	UsersIcon,
 } from "../../../Icon";
+import desktopImg from "../../../assets/img/banner/banner-desk.png";
+import mobileImg from "../../../assets/img/banner/banner-mobile.png";
+import connected_user from "../../../assets/img/banner/connected-users.png";
+import leftShape from "../../../assets/img/banner/left-shape.png";
+import rightShape from "../../../assets/img/banner/right-shape.png";
+import useScreen from "../../../hooks/useScreen";
 const Banner = () => {
 	const screen = useScreen();
 	return (
@@ -51,77 +51,88 @@ const BannerBookingForm = () => {
 	const [tab, setTab] = useState("1");
 
 	return (
-		<div className="banner-booking-form">
-			<form>
-				<ul className="tab-menu">
-					<li
-						className={tab == "1" ? "active" : ""}
-						onClick={() => setTab("1")}
-					>
-						Places
-					</li>
-					<li
-						className={tab == "2" ? "active" : ""}
-						onClick={() => setTab("2")}
-					>
-						Catering
-					</li>
-					<li
-						className={tab == "3" ? "active" : ""}
-						onClick={() => setTab("3")}
-					>
-						Events
-					</li>
-				</ul>
-				<div className="booking-form-row">
-					<div className="item">
-						<label className="item-title">
-							<Location /> Location
-						</label>
-						<input
-							type="text"
-							className="form-control"
-							placeholder="Search destinations"
-						/>
+		<>
+			<div className="banner-booking-form">
+				<form>
+					<ul className="tab-menu">
+						<li
+							className={tab == "1" ? "active" : ""}
+							onClick={() => setTab("1")}
+						>
+							Places
+						</li>
+						<li
+							className={tab == "2" ? "active" : ""}
+							onClick={() => setTab("2")}
+						>
+							Catering
+						</li>
+						<li
+							className={tab == "3" ? "active" : ""}
+							onClick={() => setTab("3")}
+						>
+							Events
+						</li>
+					</ul>
+					<div className="booking-form-row">
+						<div className="item">
+							<label className="item-title">
+								<Location /> Location
+							</label>
+							<input
+								type="text"
+								className="form-control"
+								placeholder="Search destinations"
+							/>
+						</div>
+						<div className="item">
+							<label className="item-title">
+								<CalendarAdd /> Check in
+							</label>
+							<input
+								type="text"
+								className="form-control"
+								placeholder="Add dates"
+							/>
+						</div>
+						<div className="item">
+							<label className="item-title">
+								<CalendarRemove /> Check out
+							</label>
+							<input
+								type="text"
+								className="form-control"
+								placeholder="Add dates"
+							/>
+						</div>
+						<div className="item">
+							<label className="item-title">
+								<UsersIcon /> Who
+							</label>
+							<input
+								type="text"
+								className="form-control"
+								placeholder="Add guests"
+							/>
+						</div>
+						<div className="item">
+							<Link to="#" className="cmn-btn">
+								<SearchIcon /> Search
+							</Link>
+						</div>
 					</div>
-					<div className="item">
-						<label className="item-title">
-							<CalendarAdd /> Check in
-						</label>
-						<input
-							type="text"
-							className="form-control"
-							placeholder="Add dates"
-						/>
-					</div>
-					<div className="item">
-						<label className="item-title">
-							<CalendarRemove /> Check out
-						</label>
-						<input
-							type="text"
-							className="form-control"
-							placeholder="Add dates"
-						/>
-					</div>
-					<div className="item">
-						<label className="item-title">
-							<UsersIcon /> Who
-						</label>
-						<input
-							type="text"
-							className="form-control"
-							placeholder="Add guests"
-						/>
-					</div>
-					<div className="item">
-						<Link to="#" className="cmn-btn">
-							<SearchIcon /> Search
-						</Link>
-					</div>
+				</form>
+			</div>
+			<div className="d-flex flex-wrap align-items-center connected-users">
+				<div className="position-relative">
+					<img src={connected_user} alt="" />
+					<span className="count">+15</span>
 				</div>
-			</form>
-		</div>
+				<span>
+					16 people <strong>booked</strong> a visit in last 24 hours
+				</span>
+			</div>
+		</>
 	);
 };
 
