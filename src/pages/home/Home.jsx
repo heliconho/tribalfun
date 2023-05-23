@@ -1,4 +1,5 @@
 import React from "react";
+import ActivityInformation from "../../components/ActivityInformation";
 import HomeLayout from "../../components/HomeLayout";
 import Banner from "./components/Banner";
 import VisualJourney from "./components/VisualJourney";
@@ -8,6 +9,7 @@ const Home = () => {
 		<HomeLayout>
 			<Banner />
 			<VisualJourney />
+			<ActivityInformation />
 		</HomeLayout>
 	);
 };

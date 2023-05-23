@@ -1503,6 +1503,9 @@ footer {
 		max-width: 311px;
 		margin: 0 auto 27px;
 	}
+	.subtitle {
+		font-style: italic;
+	}
 }
 .visual-slide-item {
 	display: flex;
@@ -1536,4 +1539,133 @@ footer {
 			padding: 16px;
 		}
 	}
+}
+.input-with-start-icon {
+	position: relative;
+	.form-control {
+		height: 56px;
+		border-radius: 100px;
+		background: #f9f9f9;
+		border: 1px solid var(--border);
+		box-shadow: none;
+		border: none;
+		outline: none;
+		padding-left: 50px;
+		line-height: 24px;
+		letter-spacing: 0.005em;
+		color: #8e8e8e;
+	}
+	.start-icon {
+		position: absolute;
+		top: 50%;
+		left: 18px;
+		transform: translateY(-50%);
+	}
+}
+.activity-content {
+	.subtitle {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 26px;
+		letter-spacing: 0.005em;
+		color: var(--base);
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 16px;
+		font-style: italic;
+		&::before {
+			width: 32px;
+			height: 2px;
+			background: var(--base);
+			content: "";
+			display: inline-block;
+		}
+	}
+	.title {
+		font-weight: 400;
+		margin-bottom: 40px;
+	}
+}
+.sticky-badge {
+	position: absolute;
+	bottom: 22.5%;
+	left: 268px;
+	background: var(--body);
+	color: var(--title);
+	padding: 16px 16px;
+	background: linear-gradient(
+		83.59deg,
+		#fcfcfd 36.52%,
+		rgba(252, 252, 253, 0.83) 98.8%
+	);
+	box-shadow: 0px 40px 64px -32px rgba(15, 15, 15, 0.1);
+	backdrop-filter: blur(16px);
+	border-radius: 80px;
+	width: 455px;
+	text-align: center;
+}
+.activity-info-section {
+	.subtitle {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 26px;
+		letter-spacing: 0.005em;
+		color: var(--base);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		margin-bottom: 16px;
+		&::before {
+			width: 32px;
+			height: 2px;
+			background: var(--base);
+			content: "";
+			display: inline-block;
+		}
+	}
+}
+.activity-slide-item {
+	img {
+		width: 100%;
+		border-radius: 48px;
+		margin-bottom: 32px;
+	}
+	.title {
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 40px;
+		@include breakpoint(max-md) {
+			@media (min-width: 450px) {
+				font-size: 18px;
+				line-height: 30px;
+			}
+		}
+	}
+	.badge {
+		position: absolute;
+		background: #ff0000;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 24px;
+		padding: 6px 16px;
+		color: #f7fafc;
+		border: 2px solid #ffffff;
+		border-radius: 100px;
+		top: 24px;
+		right: -24px;
+	}
+}
+.activity-info-slider {
+	overflow: hidden;
+	@include breakpoint(max-sm) {
+		padding-top: 15px;
+	}
+	.slick-slide {
+		padding-inline: 24px;
+	}
+}
+.slick-dots {
+	display: none !important;
 }
