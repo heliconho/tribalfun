@@ -44,7 +44,7 @@ const ActivityInformation = () => {
 		],
 	};
 	return (
-		<section className="activity-info-section">
+		<section className="activity-info-section pt-lg-5">
 			<div className="container">
 				{screen >= 768 ? (
 					<div className="d-none d-md-block">

@@ -1504,6 +1504,7 @@ footer {
 		margin: 0 auto 27px;
 	}
 	.subtitle {
+		color: var(--base);
 		font-style: italic;
 	}
 }
@@ -1668,4 +1669,31 @@ footer {
 }
 .slick-dots {
 	display: none !important;
+}
+.choose-item {
+	max-width: 256px;
+	margin-inline: auto;
+	text-align: center;
+	img {
+		margin-bottom: 32px;
+	}
+	.title {
+		font-size: 24px;
+		font-weight: 400;
+		margin-bottom: 8px;
+	}
+	p {
+		white-space: initial;
+		word-break: break-all;
+	}
+}
+.choose-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 24px;
+	row-gap: 60px;
+	@include breakpoint(max-sm) {
+		padding-top: 30px;
+	}
 }
