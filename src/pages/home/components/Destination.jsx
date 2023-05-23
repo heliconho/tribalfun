@@ -4,7 +4,7 @@ import { destinations } from "../../../assets/data/destinations";
 import DestinationCard from "../../../components/DestinationCard";
 
 const Destination = () => {
-	const [index, setIndex] = useState(1);
+	const [index, setIndex] = useState(0);
 	const tab__data = [...new Set(destinations?.map((item) => item?.category))];
 
 	const [tempData, setTempData] = useState(destinations);
@@ -43,7 +43,7 @@ const Destination = () => {
 						Filter <FilterIcon />
 					</button>
 				</div>
-				<div className="row g-4 justify-content-center">
+				<div className="row g-4">
 					{tempData
 						?.map((item, i) => (
 							<div className="col-xl-3 col-lg-4 col-sm-6" key={i}>

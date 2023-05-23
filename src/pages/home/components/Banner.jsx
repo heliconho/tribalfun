@@ -51,93 +51,30 @@ const Banner = () => {
 const BannerBookingForm = () => {
 	const [tab, setTab] = useState("1");
 
-	const [date, setDate] = useState();
-	const [checkout, setCheckout] = useState();
-
 	return (
 		<>
 			<div className="banner-booking-form">
-				<form>
-					<ul className="tab-menu">
-						<li
-							className={tab == "1" ? "active" : ""}
-							onClick={() => setTab("1")}
-						>
-							Places
-						</li>
-						<li
-							className={tab == "2" ? "active" : ""}
-							onClick={() => setTab("2")}
-						>
-							Catering
-						</li>
-						<li
-							className={tab == "3" ? "active" : ""}
-							onClick={() => setTab("3")}
-						>
-							Events
-						</li>
-					</ul>
-					<div className="booking-form-row">
-						<div className="item">
-							<label className="item-title">
-								<Location /> Location
-							</label>
-							<input
-								type="text"
-								className="form-control"
-								placeholder="Search destinations"
-							/>
-						</div>
-						<div className="item">
-							<label className="item-title">
-								<CalendarAdd /> Check in
-							</label>
-							<DatePicker
-								className="form-control"
-								selected={date}
-								value={date}
-								minDate={new Date()}
-								dropdownMode="select"
-								onChange={(e) => {
-									setDate(e);
-								}}
-								placeholderText="Add dates"
-							/>
-						</div>
-						<div className="item">
-							<label className="item-title">
-								<CalendarRemove /> Check out
-							</label>
-							<DatePicker
-								className="form-control"
-								selected={checkout}
-								value={checkout}
-								minDate={date}
-								dropdownMode="select"
-								onChange={(e) => {
-									setCheckout(e);
-								}}
-								placeholderText="Add dates"
-							/>
-						</div>
-						<div className="item">
-							<label className="item-title">
-								<UsersIcon /> Who
-							</label>
-							<input
-								type="text"
-								className="form-control"
-								placeholder="Add guests"
-							/>
-						</div>
-						<div className="item">
-							<Link to="#" className="cmn-btn">
-								<SearchIcon /> Search
-							</Link>
-						</div>
-					</div>
-				</form>
+				<ul className="tab-menu">
+					<li
+						className={tab == "1" ? "active" : ""}
+						onClick={() => setTab("1")}
+					>
+						Places
+					</li>
+					<li
+						className={tab == "2" ? "active" : ""}
+						onClick={() => setTab("2")}
+					>
+						Catering
+					</li>
+					<li
+						className={tab == "3" ? "active" : ""}
+						onClick={() => setTab("3")}
+					>
+						Events
+					</li>
+				</ul>
+				<SearchForm />
 			</div>
 			<div className="d-flex flex-wrap align-items-center connected-users">
 				<div className="position-relative">
@@ -148,6 +85,76 @@ const BannerBookingForm = () => {
 					16 people <strong>booked</strong> a visit in last 24 hours
 				</span>
 			</div>
+		</>
+	);
+};
+
+export const SearchForm = () => {
+	const [date, setDate] = useState();
+	const [checkout, setCheckout] = useState();
+	return (
+		<>
+			<form>
+				<div className="booking-form-row">
+					<div className="item">
+						<label className="item-title">
+							<Location /> Location
+						</label>
+						<input
+							type="text"
+							className="form-control"
+							placeholder="Search destinations"
+						/>
+					</div>
+					<div className="item">
+						<label className="item-title">
+							<CalendarAdd /> Check in
+						</label>
+						<DatePicker
+							className="form-control"
+							selected={date}
+							value={date}
+							minDate={new Date()}
+							dropdownMode="select"
+							onChange={(e) => {
+								setDate(e);
+							}}
+							placeholderText="Add dates"
+						/>
+					</div>
+					<div className="item">
+						<label className="item-title">
+							<CalendarRemove /> Check out
+						</label>
+						<DatePicker
+							className="form-control"
+							selected={checkout}
+							value={checkout}
+							minDate={date}
+							dropdownMode="select"
+							onChange={(e) => {
+								setCheckout(e);
+							}}
+							placeholderText="Add dates"
+						/>
+					</div>
+					<div className="item">
+						<label className="item-title">
+							<UsersIcon /> Who
+						</label>
+						<input
+							type="text"
+							className="form-control"
+							placeholder="Add guests"
+						/>
+					</div>
+					<div className="item">
+						<Link to="#" className="cmn-btn">
+							<SearchIcon /> Search
+						</Link>
+					</div>
+				</div>
+			</form>
 		</>
 	);
 };

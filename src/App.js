@@ -10,6 +10,7 @@ import ConfirmEmailPage from "./pages/auth/ConfirmEmailPage";
 import ForgetPassPage from "./pages/auth/ForgetPassPage";
 import SignInPage from "./pages/auth/SignInPage";
 import SignUpPage from "./pages/auth/SignUpPage";
+import DestinationPage from "./pages/destination/DestinationPage";
 import Home from "./pages/home/Home";
 import Landing from "./pages/landing/Landing";
 function App() {
@@ -32,6 +33,7 @@ function App() {
 					<Route path="/forget-pass" element={<ForgetPassPage />} />
 					<Route path="/confirm-email" element={<ConfirmEmailPage />} />
 					<Route path="/home" element={<Home />} />
+					<Route path="/destination" element={<DestinationPage />} />
 				</Routes>
 			</Wrapper>
 		</BrowserRouter>

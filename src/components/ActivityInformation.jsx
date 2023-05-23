@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import { SmsIcon } from "../Icon";
 import mobileActivity from "../assets/img/activity-2.png";
+import shapes from "../assets/img/activity-info.png";
 import activityInfo from "../assets/img/activity.png";
 import useScreen from "../hooks/useScreen";
 import { NextSlide, PrevSlide } from "./SliderNav";
@@ -45,6 +46,7 @@ const ActivityInformation = () => {
 	};
 	return (
 		<section className="activity-info-section pt-lg-5">
+			<img src={shapes} className="activity-info" alt="" />
 			<div className="container">
 				{screen >= 768 ? (
 					<div className="d-none d-md-block">
