@@ -15,7 +15,7 @@ const Destination = () => {
 		<section className="destination-section py-120 pt-5">
 			<div className="container">
 				<div className="section-title-2">
-					<h5 className="subtitle">- Party Room</h5>
+					<h5 className="subtitle d-sm-none">- Party Room</h5>
 					<h2 className="title">Explore Hong Kong for fun!</h2>
 					<p className="text d-none d-sm-block">
 						Events and items e.g DIY workshop, birthday items, cakes etc.
