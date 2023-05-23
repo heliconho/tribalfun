@@ -1729,3 +1729,128 @@ footer {
 		}
 	}
 }
+.section-title-2 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 48px;
+	.title {
+		width: 100%;
+		max-width: 431px;
+		margin: 0;
+	}
+	p {
+		width: 100%;
+		max-width: 540px;
+		font-weight: 500;
+		margin: 0;
+	}
+	align-items: center;
+	.subtitle {
+		color: var(--base);
+		font-style: italic;
+	}
+	@include breakpoint(max-sm) {
+		text-align: center;
+		justify-content: center;
+	}
+}
+.filter-btn {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	color: var(--title);
+	padding: 11px 16px;
+	background: #fcfcfd;
+	border: 1px solid #e9ebed;
+	border-radius: 100px;
+	gap: 10px;
+	display: flex;
+	align-items: center;
+}
+.filter-tab-menu {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 14px;
+	li {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		padding: 12px 24px;
+		cursor: pointer;
+		color: var(--title);
+		border-radius: 100px;
+		transition: all ease 0.3s;
+		&.active {
+			color: var(--white);
+			background: var(--base);
+		}
+	}
+}
+.filter-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 50px;
+	@include breakpoint(max-lg) {
+		margin-bottom: 35px;
+	}
+	.filter-tab-menu {
+		width: 0;
+		flex-grow: 1;
+	}
+}
+.destination-card {
+	letter-spacing: 0.005em;
+	position: relative;
+	.link {
+		position: absolute;
+		inset: 0;
+	}
+	img {
+		width: 100%;
+		transition: all ease 0.3s;
+	}
+	.img-container {
+		border-radius: 12px;
+		overflow: hidden;
+	}
+	.title {
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 28px;
+		transition: all ease 0.3s;
+		margin-bottom: 4px;
+	}
+	.cont {
+		padding: 14px 16px 0;
+	}
+	hr {
+		border-color: #e9ebed;
+		margin-block: 16px;
+		opacity: 1;
+	}
+	h3 {
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 32px;
+		letter-spacing: 0.005em;
+		small {
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 18px;
+		}
+	}
+	&:hover {
+		img {
+			transform: scale(1.1);
+		}
+		.title {
+			color: var(--base);
+		}
+	}
+	@include breakpoint(max-sm) {
+		max-width: 282px;
+		margin-inline: auto;
+	}
+}
