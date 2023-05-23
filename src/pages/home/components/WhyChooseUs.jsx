@@ -3,10 +3,16 @@ import merchant from "../../../assets/img/choose/building.png";
 import betterPrice from "../../../assets/img/choose/location.png";
 import support from "../../../assets/img/choose/support.png";
 import SectionTitle from "../../../components/SectionTitle";
+
+import leaf1 from "../../../assets/img/choose/left-leaf.png";
+import leaf2 from "../../../assets/img/choose/right-leaf.png";
+
 const WhyChooseUs = () => {
 	return (
 		<>
 			<section className="why-choose-section py-120">
+				<img src={leaf1} className="leaf1" alt="" />
+				<img src={leaf2} className="leaf2" alt="" />
 				<div className="container">
 					<SectionTitle
 						cate="Why Us"

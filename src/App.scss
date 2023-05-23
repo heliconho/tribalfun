@@ -1697,3 +1697,35 @@ footer {
 		padding-top: 30px;
 	}
 }
+.why-choose-section {
+	position: relative;
+	.leaf1,
+	.leaf2 {
+		position: absolute;
+		@include breakpoint(max-md) {
+			display: none;
+		}
+	}
+	.leaf2 {
+		top: -124px;
+		right: 0;
+		@include breakpoint(max-xl) {
+			width: 200px;
+			top: -50px;
+		}
+		@include breakpoint(max-lg) {
+			width: 150px;
+		}
+	}
+	.leaf1 {
+		top: -118px;
+		left: 0;
+		@include breakpoint(max-xl) {
+			width: 420px;
+			top: -50px;
+		}
+		@include breakpoint(max-lg) {
+			width: 320px;
+		}
+	}
+}
