@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./App.scss";
+import Account from "./pages/account/Account";
+import AccountLoginAndSecurity from "./pages/account/AccountLoginAndSecurity";
 import ConfirmEmailPage from "./pages/auth/ConfirmEmailPage";
 import ForgetPassPage from "./pages/auth/ForgetPassPage";
 import SignInPage from "./pages/auth/SignInPage";
@@ -71,6 +73,22 @@ function App() {
 					</Route>
 					<Route path="/order" element={<Order />} />
 					<Route path="/contact" element={<Contact />} />
+					<Route path="/setting">
+						<Route index element={<Account />} />
+						<Route path="personal-info" element={<Account />} />
+						<Route
+							path="login-and-security"
+							element={<AccountLoginAndSecurity />}
+						/>
+						<Route
+							path="notification"
+							element={<AccountLoginAndSecurity />}
+						/>
+						<Route
+							path="privacy-and-sharing"
+							element={<AccountLoginAndSecurity />}
+						/>
+					</Route>
 				</Routes>
 			</Wrapper>
 		</BrowserRouter>
