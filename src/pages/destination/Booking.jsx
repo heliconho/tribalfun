@@ -42,11 +42,11 @@ const Booking = () => {
 									<div className="date">
 										5:00 pm Feb 8, 2023 - 10:00 pm Feb 8, 2023
 									</div>
-									<form className="subscribe-form ms-auto">
+									<form className="subscribe-form w-100 mw-100 mb-4">
 										<input
 											type="text"
-											placeholder="Enter your email"
 											className="form-control"
+											placeholder="Use your reward coupon"
 										/>
 										<button type="button">
 											<SubmitNewsletterIcon />
