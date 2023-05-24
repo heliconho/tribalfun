@@ -19,6 +19,9 @@ import PaymentMethod from "./pages/wallet/PaymentMethod";
 import PointHistory from "./pages/wallet/PointHistory";
 import RedeemVoucher from "./pages/wallet/RedeemVoucher";
 import VoucherHistory from "./pages/wallet/VoucherHistory";
+import VoucherRedeemLayout from "./pages/wallet/modal/VoucherRedeemLayout";
+import VoucherRedeemStatusPage from "./pages/wallet/modal/VoucherRedeemStatusPage";
+import VoucherRedeemStatusPageFailed from "./pages/wallet/modal/VoucherRedeemStatusPageFailed";
 function App() {
 	const Wrapper = ({ children }) => {
 		const location = useLocation();
@@ -54,6 +57,21 @@ function App() {
 							index
 							path="redeem-voucher"
 							element={<RedeemVoucher />}
+						/>
+						<Route
+							index
+							path="redeem-voucher/voucher-redeem"
+							element={<VoucherRedeemLayout />}
+						/>
+						<Route
+							index
+							path="redeem-voucher/voucher-redeem/status"
+							element={<VoucherRedeemStatusPage />}
+						/>
+						<Route
+							index
+							path="redeem-voucher/voucher-redeem/status-failed"
+							element={<VoucherRedeemStatusPageFailed />}
 						/>
 					</Route>
 				</Routes>

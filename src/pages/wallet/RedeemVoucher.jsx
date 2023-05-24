@@ -6,8 +6,14 @@ import img2 from "../../assets/img/redeem/2.png";
 import img3 from "../../assets/img/redeem/3.png";
 import img4 from "../../assets/img/redeem/4.png";
 import HomeLayout from "../../components/HomeLayout";
+import ModalLayout from "../../components/ModalLayout";
+import useScreen from "../../hooks/useScreen";
+import StatusFailedForm from "./modal/StatusFailedForm";
+import StatusForm from "./modal/StatusForm";
+import VoucherRedeemForm from "./modal/VoucherRedeemForm";
 const RedeemVoucher = () => {
 	const navigate = useNavigate();
+	const screen = useScreen();
 	return (
 		<>
 			<HomeLayout>
@@ -65,16 +71,32 @@ const RedeemVoucher = () => {
 											<div className="points-amount">400</div>
 										</td>
 										<td>
-											<button
-												type="button"
-												className="cmn-outline-btn"
-												style={{
-													"--base": "var(--base-2)",
-													whiteSpace: "nowrap",
-												}}
-											>
-												Redeem it!
-											</button>
+											{/*  */}
+											{screen >= 576 ? (
+												<button
+													type="button"
+													className="cmn-outline-btn"
+													style={{
+														"--base": "var(--base-2)",
+														whiteSpace: "nowrap",
+													}}
+													data-bs-target="#voucher"
+													data-bs-toggle="modal"
+												>
+													Redeem it!
+												</button>
+											) : (
+												<Link
+													to="/wallet/redeem-voucher/voucher-redeem"
+													className="cmn-outline-btn"
+													style={{
+														"--base": "var(--base-2)",
+														whiteSpace: "nowrap",
+													}}
+												>
+													Redeem it!
+												</Link>
+											)}
 										</td>
 									</tr>
 								))}
@@ -105,6 +127,15 @@ const RedeemVoucher = () => {
 					</div>
 				</div>
 			</HomeLayout>
+			<ModalLayout id="voucher">
+				<VoucherRedeemForm />
+			</ModalLayout>
+			<ModalLayout id="status-form">
+				<StatusForm />
+			</ModalLayout>
+			<ModalLayout id="status-failed-form">
+				<StatusFailedForm />
+			</ModalLayout>
 		</>
 	);
 };
