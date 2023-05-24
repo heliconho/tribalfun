@@ -80,7 +80,7 @@ const PointHistory = () => {
 					<button
 						className="cmn-btn h-48-56 max-sm-full"
 						type="button"
-						style={{ minWidth: "110px" }}
+						style={{ minWidth: "148px" }}
 					>
 						Redeem
 					</button>
