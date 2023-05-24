@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "./App.scss";
 import Account from "./pages/account/Account";
 import AccountLoginAndSecurity from "./pages/account/AccountLoginAndSecurity";
+import Notification from "./pages/account/Notification";
 import ConfirmEmailPage from "./pages/auth/ConfirmEmailPage";
 import ForgetPassPage from "./pages/auth/ForgetPassPage";
 import SignInPage from "./pages/auth/SignInPage";
@@ -80,10 +81,7 @@ function App() {
 							path="login-and-security"
 							element={<AccountLoginAndSecurity />}
 						/>
-						<Route
-							path="notification"
-							element={<AccountLoginAndSecurity />}
-						/>
+						<Route path="notification" element={<Notification />} />
 						<Route
 							path="privacy-and-sharing"
 							element={<AccountLoginAndSecurity />}

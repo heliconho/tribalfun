@@ -3105,6 +3105,40 @@ footer {
 		padding-top: 20px;
 	}
 }
+.wallet-section-inner {
+	.grp {
+		&:not(:last-child) {
+			margin-bottom: 48px;
+		}
+	}
+}
 .mb-30 {
 	margin-bottom: 30px;
+}
+.form-check-input:checked {
+	background-color: var(--base);
+	border-color: var(--base);
+}
+.form-switch-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 32px;
+	h5 {
+		font-size: 18px;
+		line-height: 26px;
+		letter-spacing: 0.005em;
+		color: #09080d;
+		margin-bottom: 32px;
+	}
+}
+.form--switch {
+	padding: 0;
+	max-width: 0;
+}
+.form-switch .form-check-input {
+	height: 24px !important;
+	width: 44px !important;
+	box-shadow: none !important;
 }
