@@ -104,7 +104,7 @@ const ExploreDestination = () => {
 							) : (
 								<Link
 									to="#"
-									className="cmn-btn loader-btn"
+									className="cmn-outline-btn loader-btn"
 									onClick={() => handleClick()}
 								>
 									Load More
