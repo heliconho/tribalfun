@@ -3226,11 +3226,12 @@ footer {
 	@include breakpoint(max-sm) {
 		padding-left: 16px !important;
 		padding-right: 16px !important;
+		padding-top: 20px;
 	}
 }
 .accordion-item .accordion-header .accordion-button {
 	@include breakpoint(max-sm) {
 		padding-left: 0 !important;
-		padding-right: 0 !important;
+		// padding-right: 0 !important;
 	}
 }

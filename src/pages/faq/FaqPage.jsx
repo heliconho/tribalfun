@@ -52,37 +52,43 @@ const FaqPage = () => {
 				</BreadcrumbTwo>
 				<div className="faqs-section py-120">
 					<div className="container">
-						<ul
-							className="filter-tab-menu mt-md-4 mb-4"
-							style={{ "--base": "var(--base-2)" }}
-						>
-							<li
-								onClick={() => setActive("general")}
-								className={active == "general" ? "active" : "general"}
+						{screen > 576 && (
+							<ul
+								className="filter-tab-menu mt-md-4 mb-4"
+								style={{ "--base": "var(--base-2)" }}
 							>
-								<Cog /> General
-							</li>
-							<li
-								onClick={() => setActive("merchange")}
-								className={
-									active == "merchange" ? "active" : "merchange"
-								}
-							>
-								<UsersIcon /> Merchant{" "}
-							</li>
-							<li
-								onClick={() => setActive("voucher")}
-								className={active == "voucher" ? "active" : "voucher"}
-							>
-								<FlagI /> Voucher{" "}
-							</li>
-							<li
-								onClick={() => setActive("order")}
-								className={active == "order" ? "active" : "order"}
-							>
-								<EyeIcon2 /> Order{" "}
-							</li>
-						</ul>
+								<li
+									onClick={() => setActive("general")}
+									className={
+										active == "general" ? "active" : "general"
+									}
+								>
+									<Cog /> General
+								</li>
+								<li
+									onClick={() => setActive("merchange")}
+									className={
+										active == "merchange" ? "active" : "merchange"
+									}
+								>
+									<UsersIcon /> Merchant{" "}
+								</li>
+								<li
+									onClick={() => setActive("voucher")}
+									className={
+										active == "voucher" ? "active" : "voucher"
+									}
+								>
+									<FlagI /> Voucher{" "}
+								</li>
+								<li
+									onClick={() => setActive("order")}
+									className={active == "order" ? "active" : "order"}
+								>
+									<EyeIcon2 /> Order{" "}
+								</li>
+							</ul>
+						)}
 						<Faqs id="place" data={faqs} />
 					</div>
 				</div>
