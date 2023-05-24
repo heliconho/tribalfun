@@ -14,7 +14,7 @@ const AccountLoginAndSecurity = () => {
 export const AccountLoginAndArticle = () => {
 	return (
 		<>
-			<div className="wallet-section-inner" style={{ minWidth: "320px" }}>
+			<div className="wallet-section-inner" id="login-and-security">
 				<h4 className="title mb-30">Login & security</h4>
 				<h3 className="subtitle">Change your password</h3>
 				<div style={{ maxWidth: "400px", margin: "0 auto 30px" }}>

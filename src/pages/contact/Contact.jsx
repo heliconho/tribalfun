@@ -18,10 +18,7 @@ const Contact = () => {
 					<div className="container">
 						<div className="wallet-section-wrapper flex-wrap contact-content">
 							<ContactSidebar />
-							<div
-								className="wallet-section-inner"
-								style={{ minWidth: "320px" }}
-							>
+							<div className="wallet-section-inner">
 								<Input label="First Name" placeholder="大文" />
 								<Input label="Last Name" placeholder="陳" />
 								<Input

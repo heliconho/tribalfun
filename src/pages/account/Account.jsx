@@ -6,7 +6,7 @@ const Account = () => {
 	return (
 		<>
 			<AccountLayout>
-				<div className="wallet-section-inner" style={{ minWidth: "320px" }}>
+				<div className="wallet-section-inner">
 					<h4 className="title">Personal info</h4>
 					<Input label="First Name" placeholder="大文" />
 					<Input label="Last Name" placeholder="陳" />

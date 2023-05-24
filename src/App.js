@@ -9,6 +9,7 @@ import "./App.scss";
 import Account from "./pages/account/Account";
 import AccountLoginAndSecurity from "./pages/account/AccountLoginAndSecurity";
 import Notification from "./pages/account/Notification";
+import PrivacyAndSharing from "./pages/account/PrivacyAndSharing";
 import ConfirmEmailPage from "./pages/auth/ConfirmEmailPage";
 import ForgetPassPage from "./pages/auth/ForgetPassPage";
 import SignInPage from "./pages/auth/SignInPage";
@@ -33,7 +34,7 @@ function App() {
 		useEffect(() => {
 			setTimeout(() => {
 				document.documentElement.scrollTo(0, 0);
-			}, 500);
+			}, 0);
 		}, [location.pathname, location.search]);
 		return children;
 	};
@@ -84,7 +85,7 @@ function App() {
 						<Route path="notification" element={<Notification />} />
 						<Route
 							path="privacy-and-sharing"
-							element={<AccountLoginAndSecurity />}
+							element={<PrivacyAndSharing />}
 						/>
 					</Route>
 				</Routes>

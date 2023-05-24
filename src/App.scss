@@ -3121,7 +3121,6 @@ footer {
 }
 .form-switch-wrapper {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 32px;
@@ -3132,6 +3131,24 @@ footer {
 		color: #09080d;
 		margin-bottom: 32px;
 	}
+	p {
+		white-space: initial;
+		word-break: break-all;
+	}
+	.left {
+		width: 0;
+		flex-grow: 1;
+		padding-right: 60px;
+	}
+	.right {
+		// width: 44px;
+	}
+	.sub-title {
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 26px;
+		letter-spacing: 0.005em;
+	}
 }
 .form--switch {
 	padding: 0;
@@ -3141,4 +3158,20 @@ footer {
 	height: 24px !important;
 	width: 44px !important;
 	box-shadow: none !important;
+}
+.account-layout {
+	@include breakpoint(max-sm) {
+		.title {
+			font-size: 32px;
+			font-weight: 700;
+		}
+	}
+}
+.wallet-section-inner {
+	@include breakpoint(md) {
+		min-width: 320px;
+	}
+	@include breakpoint(max-md) {
+		width: 100%;
+	}
 }
