@@ -17,6 +17,7 @@ import Home from "./pages/home/Home";
 import Landing from "./pages/landing/Landing";
 import PaymentMethod from "./pages/wallet/PaymentMethod";
 import PointHistory from "./pages/wallet/PointHistory";
+import RedeemVoucher from "./pages/wallet/RedeemVoucher";
 import VoucherHistory from "./pages/wallet/VoucherHistory";
 function App() {
 	const Wrapper = ({ children }) => {
@@ -49,6 +50,11 @@ function App() {
 						<Route index path="payment" element={<PaymentMethod />} />
 						<Route index path="point" element={<PointHistory />} />
 						<Route index path="voucher" element={<VoucherHistory />} />
+						<Route
+							index
+							path="redeem-voucher"
+							element={<RedeemVoucher />}
+						/>
 					</Route>
 				</Routes>
 			</Wrapper>

@@ -23,7 +23,6 @@ const VoucherHistory = () => {
 								<td></td>
 								<td></td>
 								<td></td>
-								<td></td>
 							</tr>
 						</tbody>
 						<tbody className="tbody">
@@ -60,13 +59,14 @@ const VoucherHistory = () => {
 				</div>
 
 				<div className="mt-5 d-flex justify-content-end">
-					<button
-						className="cmn-btn h-48-56 max-sm-full"
+					<Link
+						className="cmn-btn h-48-56 max-sm-full d-flex align-items-center justify-content-center"
 						type="button"
 						style={{ minWidth: "148px" }}
+						to="/wallet/redeem-voucher"
 					>
 						Redeem
-					</button>
+					</Link>
 				</div>
 				<div className="col-12 d-flex mt-0 d-sm-none">
 					<button
