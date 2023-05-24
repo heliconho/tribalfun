@@ -2883,7 +2883,9 @@ footer {
 	}
 }
 .voucher-title-area {
-	margin-bottom: 16px;
+	.title {
+		margin-bottom: 16px;
+	}
 	color: var(--title);
 	strong {
 		font-weight: 700;
