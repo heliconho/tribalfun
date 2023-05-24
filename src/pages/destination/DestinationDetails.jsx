@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import {
@@ -51,7 +51,17 @@ const DestinationDetails = () => {
 		slidesToScroll: 1,
 		initialSlide: 0,
 	};
-	const [tab, setTab] = useState("party-room");
+	// const [tab, setTab] = useState("party-room");
+	const [reserve, setReserve] = useState(false);
+
+	useEffect(() => {
+		if (screen >= 576) {
+			setReserve(true);
+		} else {
+			setReserve("details");
+		}
+	}, [screen]);
+
 	return (
 		<>
 			<HomeLayout>
@@ -141,8 +151,9 @@ const DestinationDetails = () => {
 									<li>
 										<Link
 											to="#"
-											onClick={() => setTab("party-room")}
-											className={tab == "party-room" ? "active" : ""}
+											// onClick={() => setTab("party-room")}
+											// className={tab == "party-room" ? "active" : ""}
+											className="active"
 										>
 											Party Room
 										</Link>
@@ -150,8 +161,8 @@ const DestinationDetails = () => {
 									<li>
 										<Link
 											to="#"
-											onClick={() => setTab("kwun-tong")}
-											className={tab == "kwun-tong" ? "active" : ""}
+											// onClick={() => setTab("kwun-tong")}
+											// className={tab == "kwun-tong" ? "active" : ""}
 										>
 											Kwun Tong
 										</Link>
@@ -162,151 +173,180 @@ const DestinationDetails = () => {
 					</div>
 				</section>
 				{/* Destination Rental Unit */}
-				<section className="destination-single py-120 pt-5 mt-3">
+				<section className="destination-single py-120 pt-0 pt-md-5 mt-md-3">
 					<div className="container">
 						<div className="row g-4 destination-single-wrapper">
-							<div className="col-xl-8 col-lg-7">
-								<h3 className="title">Entire rental unit</h3>
-								<ul className="meta-info">
-									<li>
-										<UsersIcon /> 2-8 Guests
-									</li>
-									<li>
-										<FlagIcon /> 0 Bedroom
-									</li>
-									<li>
-										<FlagIcon /> 0 Private bath
-									</li>
-								</ul>
-								<div className="hosted-by  mb-3">Hosted by:</div>
-								<div className="author">
-									<img src={author} alt="" />
-									<div className="info">
-										<h6 className="name">ABC Company</h6>
-										<span>Joined in March 2023</span>
-									</div>
-								</div>
-								{screen >= 576 && (
-									<div className="boardgames mb-4 mb-md-5">
-										<div className="item">
-											<div className="icon">
-												<Building />
-											</div>
-											<div className="cont">
-												<h6>Switch Boardgames</h6>
-												<p>
-													xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-												</p>
-											</div>
-										</div>
-										<div className="item">
-											<div className="icon">
-												<Profile />
-											</div>
-											<div className="cont">
-												<h6>Entertainment Facilities</h6>
-												<p>
-													xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-												</p>
-											</div>
-										</div>
-									</div>
-								)}
-								<div className="d-flex">
-									<Link to="#" className="cmn-btn bg-base-2">
-										Overview
-									</Link>
-								</div>
-								<div className="read-more-txt mt-4 mb-2 text-title">
-									獨立約100尺私人派對房間 收費已包括享用場內任何設施
-									唔使同人share💟 房間設計上適合2-8人
-									（休閒娛樂小空間）💆🏼‍♂‍💆🏻‍♀‍💆🏻 適合朋友、家庭聚會👨‍👩‍👧‍👦
-									房間內設有餐具，觀迎你地自攜食物 另外設有電動麻雀Plan
-									啱晒追求速度嘅麻雀友🏃‍♀‍🏃🏃🏽‍♂‍
-								</div>
-								<Link to="#" className="font-mediun text-title">
-									Read More
-								</Link>
-								<h3 className="title font-black mt-32 mb-3">
-									What this place offers
-								</h3>
-								<Faqs id="place" data={faqs} />
-							</div>
-							<div className="col-xl-4 col-lg-5">
-								<div className="destination-sidebar">
-									<h3 className="title">
-										$100 <small>/hour</small>
-									</h3>
-									<div className="subtitle">
-										<strong>5 Hours</strong> in{" "}
-										<strong>A Little Bit Of Sweetness</strong>
-									</div>
-									<div className="date">
-										Feb 15, 2023 - Feb 20, 2023
-									</div>
-									<div className="check-in-out">
-										<div className="item">
-											<div class="item-title">Check in</div>
-											<div className="info">
-												<CalendarAdd />{" "}
-												<div>5:00 pm Feb 15, 2023</div>
-											</div>
-										</div>
-										<div className="item">
-											<div class="item-title">Check out</div>
-											<div className="info">
-												<CalendarRemove />
-												<div>10:00 pm Feb 15, 2023</div>
-											</div>
-										</div>
-									</div>
-									<div className="item-title">Guest</div>
-									<div className="form--select mb-4">
-										<span className="start-icon">
-											<UsersIcon />
-										</span>
-										<select className="form-select">
-											<option>6 Guest</option>
-											<option>12 Guest</option>
-											<option>10 Guest</option>
-											<option>8 Guest</option>
-										</select>
-									</div>
-									<Link
-										to="#"
-										className="cmn-btn"
-										style={{ paddingBlock: "15px" }}
-									>
-										Reserve
-									</Link>
-									<ul className="price-info">
+							{reserve === "details" ? (
+								<div className="col-xl-8 col-lg-7">
+									{screen >= 576 && (
+										<h3 className="title mt-4 mt-md-0">
+											Entire rental unit
+										</h3>
+									)}
+									<ul className="meta-info">
 										<li>
-											<small>You won't be charged yet</small>
-										</li>
-										<li className="mt-4">
-											<span>$100 x 5 hours</span>
-											<strong>$500</strong>
+											<UsersIcon /> 2-8 Guests
 										</li>
 										<li>
-											<span>10% reward coupon discount</span>
-											<strong>-$10</strong>
+											<FlagIcon /> 0 Bedroom
 										</li>
 										<li>
-											<span>Service fee</span>
-											<strong>$0</strong>
-										</li>
-										<li className="total">
-											<span>Total before taxes</span>
-											<strong>$490</strong>
-										</li>
-										<li className="px-0">
-											<div className="w-100 reporttxt">
-												<FlagIcon /> Report this listing
-											</div>
+											<FlagIcon /> 0 Private bath
 										</li>
 									</ul>
+									{screen >= 576 && (
+										<>
+											<div className="hosted-by  mb-3">
+												Hosted by:
+											</div>
+											<div className="author">
+												<img src={author} alt="" />
+												<div className="info">
+													<h6 className="name">ABC Company</h6>
+													<span>Joined in March 2023</span>
+												</div>
+											</div>
+											<div className="boardgames mb-4 mb-md-5">
+												<div className="item">
+													<div className="icon">
+														<Building />
+													</div>
+													<div className="cont">
+														<h6>Switch Boardgames</h6>
+														<p>
+															xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+														</p>
+													</div>
+												</div>
+												<div className="item">
+													<div className="icon">
+														<Profile />
+													</div>
+													<div className="cont">
+														<h6>Entertainment Facilities</h6>
+														<p>
+															xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+														</p>
+													</div>
+												</div>
+											</div>
+										</>
+									)}
+									<div className="d-flex">
+										<Link to="#" className="cmn-btn bg-base-2">
+											Overview
+										</Link>
+									</div>
+									<div className="read-more-txt mt-4 mb-2 text-title">
+										獨立約100尺私人派對房間 收費已包括享用場內任何設施
+										唔使同人share💟 房間設計上適合2-8人
+										（休閒娛樂小空間）💆🏼‍♂‍💆🏻‍♀‍💆🏻
+										適合朋友、家庭聚會👨‍👩‍👧‍👦
+										房間內設有餐具，觀迎你地自攜食物
+										另外設有電動麻雀Plan
+										啱晒追求速度嘅麻雀友🏃‍♀‍🏃🏃🏽‍♂‍
+									</div>
+									<Link to="#" className="font-mediun text-title">
+										Read More
+									</Link>
+									<h3 className="title font-black mt-32 mb-3">
+										What this place offers
+									</h3>
+									<Faqs id="place" data={faqs} />
+									<div className="d-flex justify-content-center mt-5">
+										<Link
+											class="cmn-btn"
+											to="/booking"
+											onClick={() => {
+												setReserve(false);
+												document.documentElement.scrollTo(0, 0);
+											}}
+										>
+											Reserve
+										</Link>
+									</div>
 								</div>
-							</div>
+							) : (
+								<div className="col-xl-4 col-lg-5">
+									<div className="destination-sidebar">
+										<h3 className="title">
+											$100 <small>/hour</small>
+										</h3>
+										<div className="subtitle">
+											<strong>5 Hours</strong> in{" "}
+											<strong>A Little Bit Of Sweetness</strong>
+										</div>
+										<div className="date">
+											Feb 15, 2023 - Feb 20, 2023
+										</div>
+										<div className="check-in-out">
+											<div className="item">
+												<div class="item-title">Check in</div>
+												<div className="info">
+													<CalendarAdd />{" "}
+													<div>
+														5:00 pm <span>Feb 15, 2023</span>
+													</div>
+												</div>
+											</div>
+											<div className="item">
+												<div class="item-title">Check out</div>
+												<div className="info">
+													<CalendarRemove />
+													<div>
+														10:00 pm <span>Feb 15, 2023</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div className="item-title">Guest</div>
+										<div className="form--select mb-4">
+											<span className="start-icon">
+												<UsersIcon />
+											</span>
+											<select className="form-select">
+												<option>6 Guest</option>
+												<option>12 Guest</option>
+												<option>10 Guest</option>
+												<option>8 Guest</option>
+											</select>
+										</div>
+										<Link
+											to="#"
+											className="cmn-btn"
+											style={{ paddingBlock: "15px" }}
+										>
+											Reserve
+										</Link>
+										<ul className="price-info">
+											<li>
+												<small>You won't be charged yet</small>
+											</li>
+											<li className="mt-4">
+												<span>$100 x 5 hours</span>
+												<strong>$500</strong>
+											</li>
+											<li>
+												<span>10% reward coupon discount</span>
+												<strong>-$10</strong>
+											</li>
+											<li>
+												<span>Service fee</span>
+												<strong>$0</strong>
+											</li>
+											<li className="total">
+												<span>Total before taxes</span>
+												<strong>$490</strong>
+											</li>
+											<li className="px-0">
+												<div className="w-100 reporttxt">
+													<FlagIcon /> Report this listing
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							)}
 						</div>
 					</div>
 				</section>
