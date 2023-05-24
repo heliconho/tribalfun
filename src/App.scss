@@ -179,7 +179,7 @@ a {
 	font-weight: 800;
 }
 .font-black {
-	font-weight: 900;
+	font-weight: 900 !important;
 }
 @include breakpoint(xl) {
 	.container {
@@ -2357,6 +2357,13 @@ footer {
 	.price-info {
 		margin-top: 24px;
 	}
+	.sub-title {
+		font-weight: 900;
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: 0.005em;
+		margin: 0;
+	}
 }
 .destination-single-wrapper {
 	@include breakpoint(xl) {
@@ -2401,4 +2408,10 @@ footer {
 			color: #5e5d65;
 		}
 	}
+}
+.rounded-16 {
+	border-radius: 16px;
+}
+.small-txt {
+	font-size: 14px;
 }
