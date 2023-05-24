@@ -55,11 +55,7 @@ const DestinationDetails = () => {
 	const [reserve, setReserve] = useState(false);
 
 	useEffect(() => {
-		if (screen >= 576) {
-			setReserve(true);
-		} else {
-			setReserve("details");
-		}
+		setReserve(false);
 	}, [screen]);
 
 	return (
@@ -176,94 +172,109 @@ const DestinationDetails = () => {
 				<section className="destination-single py-120 pt-0 pt-md-5 mt-md-3">
 					<div className="container">
 						<div className="row g-4 destination-single-wrapper">
-							<div className="col-xl-8 col-lg-7">
-								{screen >= 576 && (
-									<h3 className="title mt-4 mt-md-0">
-										Entire rental unit
-									</h3>
-								)}
-								<ul className="meta-info">
-									<li>
-										<UsersIcon /> 2-8 Guests
-									</li>
-									<li>
-										<FlagIcon /> 0 Bedroom
-									</li>
-									<li>
-										<FlagIcon /> 0 Private bath
-									</li>
-								</ul>
-								{screen >= 576 && (
-									<>
-										<div className="hosted-by  mb-3">Hosted by:</div>
-										<div className="author">
-											<img src={author} alt="" />
-											<div className="info">
-												<h6 className="name">ABC Company</h6>
-												<span>Joined in March 2023</span>
-											</div>
+							{!reserve ? (
+								<>
+									<div className="col-xl-8 col-lg-7">
+										{screen >= 576 && (
+											<h3 className="title mt-4 mt-md-0">
+												Entire rental unit
+											</h3>
+										)}
+										<ul className="meta-info">
+											<li>
+												<UsersIcon /> 2-8 Guests
+											</li>
+											<li>
+												<FlagIcon /> 0 Bedroom
+											</li>
+											<li>
+												<FlagIcon /> 0 Private bath
+											</li>
+										</ul>
+										{screen >= 576 && (
+											<>
+												<div className="hosted-by  mb-3">
+													Hosted by:
+												</div>
+												<div className="author">
+													<img src={author} alt="" />
+													<div className="info">
+														<h6 className="name">ABC Company</h6>
+														<span>Joined in March 2023</span>
+													</div>
+												</div>
+												<div className="boardgames mb-4 mb-md-5">
+													<div className="item">
+														<div className="icon">
+															<Building />
+														</div>
+														<div className="cont">
+															<h6>Switch Boardgames</h6>
+															<p>
+																xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+															</p>
+														</div>
+													</div>
+													<div className="item">
+														<div className="icon">
+															<Profile />
+														</div>
+														<div className="cont">
+															<h6>Entertainment Facilities</h6>
+															<p>
+																xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+															</p>
+														</div>
+													</div>
+												</div>
+											</>
+										)}
+										<div className="d-flex">
+											<Link to="#" className="cmn-btn bg-base-2">
+												Overview
+											</Link>
 										</div>
-										<div className="boardgames mb-4 mb-md-5">
-											<div className="item">
-												<div className="icon">
-													<Building />
-												</div>
-												<div className="cont">
-													<h6>Switch Boardgames</h6>
-													<p>
-														xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-													</p>
-												</div>
-											</div>
-											<div className="item">
-												<div className="icon">
-													<Profile />
-												</div>
-												<div className="cont">
-													<h6>Entertainment Facilities</h6>
-													<p>
-														xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-													</p>
-												</div>
-											</div>
+										<div className="read-more-txt mt-4 mb-2 text-title">
+											獨立約100尺私人派對房間
+											收費已包括享用場內任何設施 唔使同人share💟
+											房間設計上適合2-8人
+											（休閒娛樂小空間）💆🏼‍♂‍💆🏻‍♀‍💆🏻
+											適合朋友、家庭聚會👨‍👩‍👧‍👦
+											房間內設有餐具，觀迎你地自攜食物
+											另外設有電動麻雀Plan
+											啱晒追求速度嘅麻雀友🏃‍♀‍🏃🏃🏽‍♂‍
 										</div>
-									</>
-								)}
-								<div className="d-flex">
-									<Link to="#" className="cmn-btn bg-base-2">
-										Overview
-									</Link>
+										<Link to="#" className="font-mediun text-title">
+											Read More
+										</Link>
+										<h3 className="title font-black mt-32 mb-3">
+											What this place offers
+										</h3>
+										<Faqs id="place" data={faqs} />
+										<div className="d-flex justify-content-center mt-5">
+											<Link
+												class="cmn-btn"
+												to="#"
+												onClick={() => {
+													setReserve(true);
+													document.documentElement.scrollTo(0, 0);
+												}}
+											>
+												Reserve
+											</Link>
+										</div>
+									</div>
+									{screen >= 992 && (
+										<div className="col-xl-4 col-lg-5">
+											<Sidebar />
+										</div>
+									)}
+								</>
+							) : (
+								<div className="col-xl-4 col-lg-5">
+									<Sidebar />
 								</div>
-								<div className="read-more-txt mt-4 mb-2 text-title">
-									獨立約100尺私人派對房間 收費已包括享用場內任何設施
-									唔使同人share💟 房間設計上適合2-8人
-									（休閒娛樂小空間）💆🏼‍♂‍💆🏻‍♀‍💆🏻 適合朋友、家庭聚會👨‍👩‍👧‍👦
-									房間內設有餐具，觀迎你地自攜食物 另外設有電動麻雀Plan
-									啱晒追求速度嘅麻雀友🏃‍♀‍🏃🏃🏽‍♂‍
-								</div>
-								<Link to="#" className="font-mediun text-title">
-									Read More
-								</Link>
-								<h3 className="title font-black mt-32 mb-3">
-									What this place offers
-								</h3>
-								<Faqs id="place" data={faqs} />
-								<div className="d-flex justify-content-center mt-5">
-									<Link
-										class="cmn-btn"
-										to="#"
-										onClick={() => {
-											setReserve(false);
-											document.documentElement.scrollTo(0, 0);
-										}}
-									>
-										Reserve
-									</Link>
-								</div>
-							</div>
-							<div className="col-xl-4 col-lg-5">
-								<Sidebar />
-							</div>
+							)}
 						</div>
 					</div>
 				</section>
