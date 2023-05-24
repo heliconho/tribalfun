@@ -602,6 +602,10 @@ header {
 	transition: all ease 0.3s;
 	text-align: center;
 	display: block;
+	&.text-title {
+		color: var(--title);
+		border-color: var(--border);
+	}
 	&:hover {
 		color: var(--white);
 		background: var(--base);
@@ -998,6 +1002,13 @@ header {
 		}
 		&::placeholder {
 			color: #a2a1a7;
+		}
+		&:where(textarea) {
+			height: 132px;
+			@include breakpoint(md) {
+				height: 136px;
+				padding-top: 16px;
+			}
 		}
 	}
 	label {
@@ -2414,4 +2425,188 @@ footer {
 }
 .small-txt {
 	font-size: 14px;
+}
+.booking-info-content {
+	max-width: 694px;
+	.title {
+		font-size: 32px;
+		margin-bottom: 48px;
+	}
+	.sub-title {
+		font-weight: 900;
+		font-size: 20px;
+		line-height: 28px;
+		letter-spacing: 0.005em;
+		color: var(--title);
+		margin-top: 32px;
+		margin-bottom: 24px;
+	}
+	@include breakpoint(max-md) {
+		.title {
+			font-size: 24px;
+			line-height: 40px;
+			margin-bottom: 32px;
+		}
+	}
+}
+.booking-info-title {
+	font-size: 24px;
+	line-height: 40px;
+	margin-bottom: 32px;
+}
+.input-two {
+	.form-control {
+		background: #f9f9f9;
+		border-radius: 100px;
+		border: 1px solid #e9ebed;
+		padding: 0;
+		input {
+			border-radius: 100px;
+			height: 56px;
+			width: 100%;
+			padding-inline: 56px;
+			box-shadow: none;
+			outline: none;
+			border-radius: 32px;
+			position: relative;
+			z-index: 1;
+			border: none;
+			background: transparent;
+			@include breakpoint(max-sm) {
+				height: 54px;
+			}
+		}
+		.startIcon,
+		.endIcon {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.startIcon {
+			left: 18px;
+			color: var(--text);
+		}
+		.endIcon {
+			right: 18px;
+			color: var(--title);
+		}
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 24px;
+		* {
+			font-family: var(--body-fonts);
+			input {
+				color: var(--text);
+			}
+		}
+		&.flex {
+			display: flex;
+			align-items: center;
+			padding-inline: 56px;
+			.react-datepicker-wrapper {
+				// width: 0;
+				// flex-grow: 1;
+				max-width: 68px;
+				input {
+					padding: 0;
+				}
+			}
+		}
+	}
+	label {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		margin-bottom: 16px;
+		color: var(--title);
+	}
+}
+.react-datepicker-popper {
+	z-index: 9;
+}
+.pay-width-checkbox {
+	display: flex;
+	align-items: center;
+	gap: 22px;
+	border: 1px solid #e5e5e7;
+	padding: 24px 16px;
+	border-radius: 100px;
+	cursor: pointer;
+	position: relative;
+	margin-bottom: 32px;
+	@include breakpoint(max-md) {
+		margin-bottom: 26px;
+	}
+	input {
+		border: 1px solid #e5e5e7;
+		border-radius: 50% !important;
+		padding: 0;
+		width: 24px;
+		height: 0;
+		&::before {
+			content: "";
+			width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			border: 1px solid #e5e5e7;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		position: relative;
+		&:checked {
+			opacity: 0;
+		}
+	}
+	.check {
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 14px;
+		transform: translateY(-50%);
+		svg {
+			width: 28px;
+			height: 28px;
+			color: var(--base);
+		}
+	}
+	input:checked ~ .check {
+		display: block;
+	}
+	&.form-check {
+		padding: 0;
+		border: 0;
+		padding-left: 30px;
+		color: var(--title);
+		display: inline-flex;
+		margin-left: -16px;
+		input {
+			// opacity: 0;
+			margin: 0;
+			width: 0;
+		}
+	}
+}
+.card-form {
+	.input-item {
+		label {
+			font-weight: 500;
+			margin-bottom: 8px;
+		}
+		.form-control {
+			border-color: #e9ebed;
+		}
+	}
+	.cmn-btn {
+		height: 56px;
+		min-width: 202px;
+		@include breakpoint(max-sm) {
+			width: 100%;
+			height: 48px;
+			font-weight: 700;
+			font-size: 16px;
+		}
+	}
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Eye, EyeSlash } from "../Icon";
 
-const Input = ({ label, type, className, ...rest }) => {
+const Input = ({ label, type, className, textarea, ...rest }) => {
 	const [viewPass, setViewPass] = useState(false);
 	return (
 		<>
@@ -25,7 +25,11 @@ const Input = ({ label, type, className, ...rest }) => {
 			) : (
 				<div className={`input-item ${className ? className : ""}`}>
 					{label && <label>{label}</label>}
-					<input className="form-control" {...rest} />
+					{textarea ? (
+						<textarea className="form-control" {...rest}></textarea>
+					) : (
+						<input className="form-control" {...rest} />
+					)}
 				</div>
 			)}
 		</>
