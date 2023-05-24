@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import {
 	AngleRight,
 	Building,
+	CalendarAdd,
+	CalendarRemove,
 	Connectivity,
 	Entertainment,
 	Equipment,
@@ -162,8 +164,8 @@ const DestinationDetails = () => {
 				{/* Destination Rental Unit */}
 				<section className="destination-single py-120 pt-5 mt-3">
 					<div className="container">
-						<div className="row">
-							<div className="col-md-8">
+						<div className="row g-4 destination-single-wrapper">
+							<div className="col-xl-8 col-lg-7">
 								<h3 className="title">Entire rental unit</h3>
 								<ul className="meta-info">
 									<li>
@@ -225,12 +227,86 @@ const DestinationDetails = () => {
 								<Link to="#" className="font-mediun text-title">
 									Read More
 								</Link>
-								<h3 className="title font-black mt-32 mb-32">
+								<h3 className="title font-black mt-32 mb-3">
 									What this place offers
 								</h3>
 								<Faqs id="place" data={faqs} />
 							</div>
-							<div className="col-md-4"></div>
+							<div className="col-xl-4 col-lg-5">
+								<div className="destination-sidebar">
+									<h3 className="title">
+										$100 <small>/hour</small>
+									</h3>
+									<div className="subtitle">
+										<strong>5 Hours</strong> in{" "}
+										<strong>A Little Bit Of Sweetness</strong>
+									</div>
+									<div className="date">
+										Feb 15, 2023 - Feb 20, 2023
+									</div>
+									<div className="check-in-out">
+										<div className="item">
+											<div class="item-title">Check in</div>
+											<div className="info">
+												<CalendarAdd />{" "}
+												<div>5:00 pm Feb 15, 2023</div>
+											</div>
+										</div>
+										<div className="item">
+											<div class="item-title">Check out</div>
+											<div className="info">
+												<CalendarRemove />
+												<div>10:00 pm Feb 15, 2023</div>
+											</div>
+										</div>
+									</div>
+									<div className="item-title">Guest</div>
+									<div className="form--select mb-4">
+										<span className="start-icon">
+											<UsersIcon />
+										</span>
+										<select className="form-select">
+											<option>6 Guest</option>
+											<option>12 Guest</option>
+											<option>10 Guest</option>
+											<option>8 Guest</option>
+										</select>
+									</div>
+									<Link
+										to="#"
+										className="cmn-btn"
+										style={{ paddingBlock: "15px" }}
+									>
+										Reserve
+									</Link>
+									<ul className="price-info">
+										<li>
+											<small>You won't be charged yet</small>
+										</li>
+										<li className="mt-4">
+											<span>$100 x 5 hours</span>
+											<strong>$500</strong>
+										</li>
+										<li>
+											<span>10% reward coupon discount</span>
+											<strong>-$10</strong>
+										</li>
+										<li>
+											<span>Service fee</span>
+											<strong>$0</strong>
+										</li>
+										<li className="total">
+											<span>Total before taxes</span>
+											<strong>$490</strong>
+										</li>
+										<li className="px-0">
+											<div className="w-100 reporttxt">
+												<FlagIcon /> Report this listing
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
