@@ -3076,3 +3076,32 @@ footer {
 		padding-top: 45px;
 	}
 }
+.contact-content {
+	@include breakpoint(max-md) {
+		.wallet-section-inner {
+			width: 100%;
+		}
+		row-gap: 35px;
+	}
+	.input-item {
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+		label {
+			margin-bottom: 8px;
+		}
+		.form-control:where(textarea) {
+			height: 131px;
+		}
+		@include breakpoint(max-sm) {
+			.form-control {
+				height: 39.19px;
+			}
+		}
+	}
+}
+.contact-content-section {
+	@include breakpoint(max-md) {
+		padding-top: 20px;
+	}
+}

@@ -10,6 +10,7 @@ import ConfirmEmailPage from "./pages/auth/ConfirmEmailPage";
 import ForgetPassPage from "./pages/auth/ForgetPassPage";
 import SignInPage from "./pages/auth/SignInPage";
 import SignUpPage from "./pages/auth/SignUpPage";
+import Contact from "./pages/contact/Contact";
 import Booking from "./pages/destination/Booking";
 import DestinationDetails from "./pages/destination/DestinationDetails";
 import DestinationPage from "./pages/destination/DestinationPage";
@@ -69,6 +70,7 @@ function App() {
 						/>
 					</Route>
 					<Route path="/order" element={<Order />} />
+					<Route path="/contact" element={<Contact />} />
 				</Routes>
 			</Wrapper>
 		</BrowserRouter>
