@@ -24,12 +24,31 @@ const FaqPage = () => {
 					text="Browse information about how to use our website, and share your feedback with us. Frequently asked questions about travel can be found here."
 					extraClass="account-layout"
 				>
-					<div className="faqs-search">
-						<Input placeholder="Search anything" />
-						<Link to="#" className="cmn-btn">
-							<SearchIcon /> Search
-						</Link>
-					</div>
+					{screen < 576 ? (
+						<div className="d-flex d-sm-none justify-content-between mt-4">
+							<select className="form-select filter-select">
+								<option>Filter By</option>
+								<option>Name</option>
+								<option>Price</option>
+								<option>Date</option>
+								<option>Rating</option>
+							</select>
+							<select className="form-select filter-select">
+								<option>Sort By</option>
+								<option>Name</option>
+								<option>Price</option>
+								<option>Date</option>
+								<option>Rating</option>
+							</select>
+						</div>
+					) : (
+						<div className="faqs-search">
+							<Input placeholder="Search anything" />
+							<Link to="#" className="cmn-btn">
+								<SearchIcon /> Search
+							</Link>
+						</div>
+					)}
 				</BreadcrumbTwo>
 				<div className="faqs-section py-120">
 					<div className="container">

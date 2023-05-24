@@ -10,6 +10,7 @@ import {
 	SearchIcon,
 } from "../Icon";
 import logo from "../assets/img/logo.png";
+import useScreen from "../hooks/useScreen";
 import ConfirmEmail from "./ConfirmEmail";
 import DropdownGroup from "./DropdownGroup";
 import ForgetPass from "./ForgetPass";
@@ -32,6 +33,7 @@ const Header = () => {
 	};
 	const [sticky, setSticky] = useState(false);
 	window.addEventListener("scroll", handleScroll);
+	const screen = useScreen()
 	return (
 		<>
 			<header className={sticky ? "sticky" : ""}>
@@ -94,7 +96,10 @@ const Header = () => {
 											}
 											key={i}
 										>
-											<Link to="#" onClick={() => setSubmenuOpen(i)}>
+											<Link
+												to={screen >= 992 ? item?.url : "#0"}
+												onClick={() => setSubmenuOpen(i)}
+											>
 												{item?.name}{" "}
 												<span className="d-lg-none">
 													<RightAngle />
@@ -168,7 +173,7 @@ const data = [
 	},
 	{
 		name: "Category",
-		url: "#",
+		url: "/destination",
 		data: [
 			{
 				name: "Places",

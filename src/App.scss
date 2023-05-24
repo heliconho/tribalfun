@@ -3167,6 +3167,7 @@ footer {
 	@include breakpoint(max-sm) {
 		.title {
 			font-size: 32px;
+			line-height: 48px;
 			font-weight: 700;
 		}
 	}
