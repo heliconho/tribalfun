@@ -33,13 +33,13 @@ const ProfileDropdown = ({ setMenuTrigger }) => {
 				>
 					<ul className="__profile-dropdown-menu">
 						<li>
-							<Link to="/about">
+							<Link to="/order">
 								<OrderIcon />
 								<span>Order</span>
 							</Link>
 						</li>
 						<li>
-							<Link to="/about">
+							<Link to="/wallet/payment">
 								<WalletIcon />
 								<span>Wallet</span>
 							</Link>

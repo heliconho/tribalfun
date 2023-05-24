@@ -251,7 +251,7 @@ const DestinationDetails = () => {
 											What this place offers
 										</h3>
 										<Faqs id="place" data={faqs} />
-										<div className="d-flex justify-content-center mt-5">
+										<div className="d-flex justify-content-center mt-5 d-lg-none">
 											<Link
 												class="cmn-btn"
 												to="#"

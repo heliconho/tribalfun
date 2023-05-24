@@ -671,7 +671,7 @@ header {
 		right: calc(50% + 220px);
 		width: 120px;
 	}
-	// z-index: 10;
+	z-index: 2;
 	@include breakpoint(max-lg) {
 		display: none;
 	}
@@ -2534,6 +2534,7 @@ footer {
 	cursor: pointer;
 	position: relative;
 	margin-bottom: 32px;
+	color: var(--title);
 	@include breakpoint(max-md) {
 		margin-bottom: 26px;
 	}
@@ -2542,38 +2543,35 @@ footer {
 		border-radius: 50% !important;
 		padding: 0;
 		width: 24px;
-		height: 0;
+		height: 24px;
+		outline: none;
+		transform: scale(1);
+		--base: #3b71fe;
 		&::before {
 			content: "";
-			width: 24px;
-			height: 24px;
+			width: 18px;
+			height: 18px;
 			border-radius: 50%;
-			border: 1px solid #e5e5e7;
+			background: var(--base);
 			display: block;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-		}
-		position: relative;
-		&:checked {
+			border: 3px solid var(--white);
 			opacity: 0;
 		}
-	}
-	.check {
-		display: none;
-		position: absolute;
-		top: 50%;
-		left: 14px;
-		transform: translateY(-50%);
-		svg {
-			width: 28px;
-			height: 28px;
-			color: var(--base);
+		position: relative;
+		box-shadow: none !important;
+		&:checked {
+			background: var(--base);
+			transform: scale(0.9);
+			border-color: var(--base);
 		}
-	}
-	input:checked ~ .check {
-		display: block;
+		&:checked::before {
+			opacity: 1;
+		}
+		margin-top: -2px !important;
 	}
 	&.form-check {
 		padding: 0;
@@ -2581,11 +2579,8 @@ footer {
 		padding-left: 30px;
 		color: var(--title);
 		display: inline-flex;
-		margin-left: -16px;
-		input {
-			// opacity: 0;
-			margin: 0;
-			width: 0;
+		.form-check-label {
+			transform: translateX(-12px);
 		}
 	}
 }
@@ -2607,6 +2602,283 @@ footer {
 			height: 48px;
 			font-weight: 700;
 			font-size: 16px;
+		}
+	}
+}
+.breadcrumb-section-2 {
+	text-align: center;
+	.container {
+		padding-block: 50px;
+	}
+	@include breakpoint(md) {
+		padding-inline: 16px;
+		.container {
+			max-width: 1263px;
+			padding-block: 80px;
+			position: relative;
+			&::before {
+				content: "";
+				inset: 0;
+				position: absolute;
+				background: #f9f9f9;
+				border-radius: 24px;
+				z-index: -1;
+			}
+		}
+	}
+	.subtitle {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 26px;
+		letter-spacing: 0.005em;
+		color: var(--base-2);
+		display: flex;
+		justify-content: center;
+		gap: 12px;
+		color: var(--base-2);
+		margin: 0;
+		align-items: center;
+		margin-bottom: 16px;
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 32px;
+			height: 2px;
+
+			background: var(--base-2);
+		}
+	}
+	.title {
+		font-weight: 900;
+		font-size: 48px;
+		line-height: 64px;
+		letter-spacing: 0.005em;
+		margin-bottom: 16px;
+	}
+	@include breakpoint(max-sm) {
+		.subtitle {
+			font-style: italic;
+		}
+	}
+	@include breakpoint(max-sm) {
+		text-align: left;
+		.container {
+			padding-bottom: 30px;
+		}
+		.subtitle {
+			justify-content: flex-start;
+		}
+		p {
+			display: none;
+		}
+		.title {
+			margin: 0;
+		}
+	}
+}
+.wallet-section-wrapper {
+	display: flex;
+	gap: 24px;
+	justify-content: space-between;
+	.wallet-section-inner {
+		width: 0;
+		flex-grow: 1;
+		max-width: 694px;
+		.title {
+			font-weight: 900;
+			font-size: 24px;
+			line-height: 32px;
+			margin-bottom: 48px;
+		}
+		.subtitle {
+			font-weight: 900;
+			font-size: 20px;
+			line-height: 28px;
+			margin-bottom: 32px;
+		}
+	}
+	.sidebar-menu {
+		width: 0;
+		flex-grow: 1;
+		max-width: 384px;
+		.title {
+			font-weight: 900;
+			font-size: 32px;
+			line-height: 40px;
+		}
+		p {
+			margin-bottom: 40px;
+		}
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+			li {
+				padding: 0;
+				margin: 0;
+				a {
+					padding: 0;
+					margin: 0;
+					display: flex;
+					align-items: center;
+					gap: 15px;
+					font-weight: 500;
+					color: var(--text);
+					&.active {
+						color: var(--title);
+					}
+				}
+			}
+		}
+		@include breakpoint(max-lg) {
+			@include breakpoint(md) {
+				max-width: 230px;
+			}
+		}
+	}
+}
+.h-48-56 {
+	height: 48px;
+	@include breakpoint(sm) {
+		height: 56px;
+	}
+}
+@include breakpoint(max-sm) {
+	.max-sm-full {
+		width: 100%;
+	}
+}
+.cmn-table-wrapper {
+	width: 100%;
+}
+.cmn-table {
+	width: 100%;
+	thead {
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			background: #f9f9f9;
+			// opacity: 0.5;
+			border: 1px solid #e9ebed;
+			border-radius: 24px;
+			inset: 0;
+		}
+		tr {
+			border: none !important;
+			th {
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 24px;
+				letter-spacing: 0.005em;
+				background: #f9f9f9;
+				opacity: 0.5;
+				border: none !important;
+				border-radius: 24px;
+				padding: 12px 12px;
+				white-space: pre;
+				&:first-child {
+					padding-left: 16px;
+				}
+			}
+		}
+	}
+	tbody {
+		tr {
+			td {
+				padding: 10px;
+				border-collapse: separate;
+			}
+		}
+	}
+	.tbody {
+		position: relative;
+		&::before {
+			border: 1px dashed #ff5c05;
+			border-radius: 10px;
+			inset: 0;
+			content: "";
+			position: absolute;
+			z-index: -1;
+		}
+		td {
+			padding: 0 16px;
+		}
+		tr:first-child {
+			td {
+				padding-top: 16px;
+			}
+		}
+		&:last-child {
+			td {
+				padding-bottom: 16px;
+			}
+		}
+		.name {
+			font-size: 18px;
+			line-height: 32px;
+			margin-bottom: 0;
+		}
+		.date {
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 22px;
+			display: block;
+			letter-spacing: 0.005em;
+		}
+	}
+	@include breakpoint(max-sm) {
+		&.responsive-table {
+			thead {
+				display: none;
+			}
+			tbody {
+				display: block;
+			}
+			.tbody {
+				&::before {
+					display: none;
+				}
+				tr {
+					display: block;
+					td {
+						display: block;
+						padding: 0 !important;
+					}
+					border: 1px dashed #ff5c05;
+					padding: 20px;
+					border-radius: 5px;
+					color: var(--title);
+					&:not(:last-child) {
+						margin-bottom: 19px;
+					}
+					.hide-responsive {
+						display: none;
+					}
+					td[data-prev] {
+						display: flex;
+						&::before {
+							content: attr(data-prev);
+							margin-right: 5px;
+						}
+					}
+					td[data-label] {
+						display: flex;
+						&::after {
+							content: attr(data-label);
+							margin-left: 5px;
+						}
+					}
+					.expire {
+						font-size: 12px;
+						line-height: 18px;
+					}
+					.points {
+						font-size: 18px;
+						line-height: 32px;
+					}
+				}
+			}
 		}
 	}
 }

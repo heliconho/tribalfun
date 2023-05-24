@@ -15,6 +15,9 @@ import DestinationDetails from "./pages/destination/DestinationDetails";
 import DestinationPage from "./pages/destination/DestinationPage";
 import Home from "./pages/home/Home";
 import Landing from "./pages/landing/Landing";
+import PaymentMethod from "./pages/wallet/PaymentMethod";
+import PointHistory from "./pages/wallet/PointHistory";
+import VoucherHistory from "./pages/wallet/VoucherHistory";
 function App() {
 	const Wrapper = ({ children }) => {
 		const location = useLocation();
@@ -41,6 +44,12 @@ function App() {
 						element={<DestinationDetails />}
 					/>
 					<Route path="/booking" element={<Booking />} />
+					<Route path="/wallet">
+						<Route index element={<PaymentMethod />} />
+						<Route index path="payment" element={<PaymentMethod />} />
+						<Route index path="point" element={<PointHistory />} />
+						<Route index path="voucher" element={<VoucherHistory />} />
+					</Route>
 				</Routes>
 			</Wrapper>
 		</BrowserRouter>

@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import {
 	AngleRight,
 	CalendarAdd,
-	Check,
 	EditIcon,
 	InfoCircle,
 	SubmitNewsletterIcon,
@@ -115,11 +114,15 @@ const Booking = () => {
 									</div>
 									<h5 className="sub-title">Pay with</h5>
 									<label className="pay-width-checkbox">
-										<input type="checkbox" />
-										<span className="check">
-											<Check />
-										</span>
-										<img src={paypal} alt="" />
+										<input
+											type="radio"
+											className="form-check-input"
+										/>
+										<img
+											className="form-check-label"
+											src={paypal}
+											alt=""
+										/>
 									</label>
 									<div className="mb-3">Or using a credit card</div>
 									<div className="card-form">
@@ -144,10 +147,10 @@ const Booking = () => {
 											</div>
 											<div className="col-12">
 												<label className="pay-width-checkbox form-check">
-													<input type="checkbox" />
-													<span className="check">
-														<Check />
-													</span>
+													<input
+														type="radio"
+														className="form-check-input"
+													/>
 													<span className="form-check-label">
 														Save card
 													</span>
