@@ -1817,12 +1817,23 @@ footer {
 			color: var(--white);
 			background: var(--base);
 		}
+		align-items: center;
+		display: flex;
+		gap: 5px;
+		justify-content: center;
 	}
 	@include breakpoint(max-lg) {
 		li {
 			font-size: 12px;
 			padding: 8px 15px;
 		}
+	}
+	.badge {
+		background: var(--base-2) !important;
+		font-weight: 400;
+		border-radius: 50%;
+		line-height: 14px;
+		padding-block: 3px;
 	}
 }
 .filter-wrapper {
@@ -2895,6 +2906,11 @@ footer {
 		padding-top: 70px;
 		padding-bottom: 40px;
 		margin-bottom: 0;
+	}
+	.subtitle {
+		color: var(--base-2);
+		font-style: italic;
+		margin-bottom: 8px;
 	}
 }
 .text-base-2 {

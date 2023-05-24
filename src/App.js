@@ -15,6 +15,7 @@ import DestinationDetails from "./pages/destination/DestinationDetails";
 import DestinationPage from "./pages/destination/DestinationPage";
 import Home from "./pages/home/Home";
 import Landing from "./pages/landing/Landing";
+import Order from "./pages/order/Order";
 import PaymentMethod from "./pages/wallet/PaymentMethod";
 import PointHistory from "./pages/wallet/PointHistory";
 import RedeemVoucher from "./pages/wallet/RedeemVoucher";
@@ -50,30 +51,24 @@ function App() {
 					<Route path="/booking" element={<Booking />} />
 					<Route path="/wallet">
 						<Route index element={<PaymentMethod />} />
-						<Route index path="payment" element={<PaymentMethod />} />
-						<Route index path="point" element={<PointHistory />} />
-						<Route index path="voucher" element={<VoucherHistory />} />
+						<Route path="payment" element={<PaymentMethod />} />
+						<Route path="point" element={<PointHistory />} />
+						<Route path="voucher" element={<VoucherHistory />} />
+						<Route path="redeem-voucher" element={<RedeemVoucher />} />
 						<Route
-							index
-							path="redeem-voucher"
-							element={<RedeemVoucher />}
-						/>
-						<Route
-							index
 							path="redeem-voucher/voucher-redeem"
 							element={<VoucherRedeemLayout />}
 						/>
 						<Route
-							index
 							path="redeem-voucher/voucher-redeem/status"
 							element={<VoucherRedeemStatusPage />}
 						/>
 						<Route
-							index
 							path="redeem-voucher/voucher-redeem/status-failed"
 							element={<VoucherRedeemStatusPageFailed />}
 						/>
 					</Route>
+					<Route path="/order" element={<Order />} />
 				</Routes>
 			</Wrapper>
 		</BrowserRouter>

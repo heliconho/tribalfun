@@ -3,14 +3,18 @@ import { Link } from "react-router-dom";
 import { destinations } from "../../../assets/data/destinations";
 import DestinationCard from "../../../components/DestinationCard";
 
-const RecomendationPlace = () => {
+const RecomendationPlace = ({ title, subtitle, data }) => {
 	return (
 		<>
 			<section className="recomendation-place py-120">
 				<div className="container">
 					<div className="section-title text-md-start ms-md-0">
-						<h6 className="subtitle d-md-none">- Recomendation place</h6>
-						<h2 className="title fw-md-900">Recomendation place</h2>
+						<h6 className="subtitle d-md-none">
+							{subtitle ? subtitle : "- Recomendation place"}
+						</h6>
+						<h2 className="title fw-md-900">
+							{title ? title : "Recomendation place"}
+						</h2>
 					</div>
 					<div className="row g-4">
 						{destinations

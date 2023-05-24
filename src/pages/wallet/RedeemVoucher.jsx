@@ -68,7 +68,7 @@ const RedeemVoucher = () => {
 											</div>
 										</td>
 										<td>
-											<div className="points-amount">400</div>
+											<div className="points-amount">$490</div>
 										</td>
 										<td>
 											{/*  */}
