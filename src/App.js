@@ -18,6 +18,7 @@ import Contact from "./pages/contact/Contact";
 import Booking from "./pages/destination/Booking";
 import DestinationDetails from "./pages/destination/DestinationDetails";
 import DestinationPage from "./pages/destination/DestinationPage";
+import FaqPage from "./pages/faq/FaqPage";
 import Home from "./pages/home/Home";
 import Landing from "./pages/landing/Landing";
 import Order from "./pages/order/Order";
@@ -75,6 +76,7 @@ function App() {
 					</Route>
 					<Route path="/order" element={<Order />} />
 					<Route path="/contact" element={<Contact />} />
+					<Route path="/faq" element={<FaqPage />} />
 					<Route path="/setting">
 						<Route index element={<Account />} />
 						<Route path="personal-info" element={<Account />} />

@@ -2621,6 +2621,10 @@ footer {
 	.container {
 		padding-block: 50px;
 	}
+	.text-area {
+		max-width: 715px;
+		margin-inline: auto;
+	}
 	@include breakpoint(md) {
 		padding-inline: 16px;
 		.container {
@@ -3173,5 +3177,59 @@ footer {
 	}
 	@include breakpoint(max-md) {
 		width: 100%;
+	}
+}
+.faqs-search {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	max-width: 588px;
+	width: 100%;
+	margin: 48px auto 0;
+	.input-item {
+		flex-grow: 1;
+	}
+	.form-control,
+	.cmn-btn {
+		height: 56px;
+		border-radius: 32px;
+	}
+	.cmn-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+	}
+	* {
+		margin: 0 !important;
+	}
+}
+.faqs-section {
+	.accordion-body {
+		padding-inline: 0;
+		.accordion-header {
+			.accordion-button {
+			}
+		}
+		* {
+			white-space: initial;
+			word-break: break-all;
+		}
+		@include breakpoint(max-sm) {
+			.accordion-collapse {
+				padding-inline: 24px;
+			}
+		}
+	}
+	@include breakpoint(max-sm) {
+		padding-left: 16px !important;
+		padding-right: 16px !important;
+	}
+}
+.accordion-item .accordion-header .accordion-button {
+	@include breakpoint(max-sm) {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
 	}
 }

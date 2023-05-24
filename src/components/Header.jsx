@@ -164,7 +164,7 @@ const Submenu = ({ data }) => {
 const data = [
 	{
 		name: "About us",
-		url: "/about",
+		url: "#",
 	},
 	{
 		name: "Category",
