@@ -12,7 +12,7 @@ const AccountLayout = ({ children }) => {
 	const screen = useScreen();
 	const navigate = useNavigate();
 	useEffect(() => {
-		if (screen >= 576) {
+		if (screen < 576) {
 			navigate("/setting/personal-info");
 		}
 	}, [screen]);
