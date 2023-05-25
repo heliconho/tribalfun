@@ -3209,10 +3209,6 @@ footer {
 .faqs-section {
 	.accordion-body {
 		padding-inline: 0;
-		.accordion-header {
-			.accordion-button {
-			}
-		}
 		* {
 			white-space: initial;
 			word-break: break-all;
@@ -3227,6 +3223,11 @@ footer {
 		padding-left: 16px !important;
 		padding-right: 16px !important;
 		padding-top: 20px;
+	}
+	.subtitle {
+		font-size: 24px;
+		font-weight: 700;
+		margin-bottom: 40px;
 	}
 }
 .accordion-item .accordion-header .accordion-button {
