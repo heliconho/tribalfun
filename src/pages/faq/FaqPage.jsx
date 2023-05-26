@@ -72,7 +72,7 @@ const FaqPage = () => {
 						</div>
 					)}
 				</BreadcrumbTwo>
-				<div className="faqs-section py-120">
+				<div className="faqs-section py-120 faqs-page-section">
 					<div className="container">
 						{screen > 576 ? (
 							<>
