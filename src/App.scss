@@ -2352,12 +2352,18 @@ footer {
 				svg {
 					width: 24px;
 				}
-				div {
+				> div {
 					width: 0;
 					flex-grow: 1;
 					span {
 						display: block;
 					}
+				}
+				input {
+					width: 100%;
+					box-shadow: none;
+					outline: none;
+					border: none;
 				}
 			}
 		}

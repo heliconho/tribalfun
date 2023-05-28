@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import DatePicker from "react-datepicker";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import {
@@ -284,6 +285,10 @@ const DestinationDetails = () => {
 	);
 };
 const Sidebar = () => {
+	const [date, setDate] = useState(new Date());
+	const [checkout, setCheckout] = useState(new Date());
+
+	console.log(date);
 	return (
 		<div className="destination-sidebar">
 			<h3 className="title">
@@ -295,24 +300,42 @@ const Sidebar = () => {
 			</div>
 			<div className="date">Feb 15, 2023 - Feb 20, 2023</div>
 			<div className="check-in-out">
-				<div className="item">
+				<label className="item">
 					<div class="item-title">Check in</div>
 					<div className="info">
 						<CalendarAdd />{" "}
 						<div>
-							5:00 pm <span>Feb 15, 2023</span>
+							{date.toLocaleTimeString()}
+							<DatePicker
+								selected={date}
+								value={date}
+								minDate={new Date()}
+								onChange={(e) => {
+									setDate(e);
+								}}
+								showTimeSelect
+							/>
 						</div>
 					</div>
-				</div>
-				<div className="item">
+				</label>
+				<label className="item">
 					<div class="item-title">Check out</div>
 					<div className="info">
 						<CalendarRemove />
 						<div>
-							10:00 pm <span>Feb 15, 2023</span>
+							{checkout.toLocaleTimeString()}
+							<DatePicker
+								selected={checkout}
+								value={checkout}
+								minDate={date}
+								onChange={(e) => {
+									setCheckout(e);
+								}}
+								showTimeSelect
+							/>
 						</div>
 					</div>
-				</div>
+				</label>
 			</div>
 			<div className="item-title">Guest</div>
 			<div className="form--select mb-4">
